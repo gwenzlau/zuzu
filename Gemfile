@@ -5,12 +5,11 @@ gem "paperclip", "~> 3.0"
 gem 'aws-sdk', '1.3.4'
 gem "unicorn", "~> 4.6.3"
 gem "rack-timeout"
-gem 'sqlite3', '1.3.5'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
- group :development do
+ group :development, :test do
  	gem 'sqlite3', '1.3.5'
  end
  group :production do
