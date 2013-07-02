@@ -2,15 +2,19 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 gem "paperclip", "~> 3.0"
-gem 'aws-sdk'
+gem 'aws-sdk', '1.3.4'
+gem "unicorn", "~> 4.6.3"
+gem "rack-timeout"
+gem 'sqlite3', '1.3.5'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-group :development do
-	gem 'sqlite3', '1.3.5'
-end
-group :production do
-gem 'pg'
+
+ group :development do
+ 	gem 'sqlite3', '1.3.5'
+ end
+ group :production do
+ gem 'pg'
 end
 
 
