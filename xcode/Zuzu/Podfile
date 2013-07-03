@@ -1,0 +1,5 @@
+platform :ios, "5.0"
+pod "AFNetworking"
+pod "AFIncrementalStore"
+pod 'ISO8601DateFormatter', '~> 0.6'
+pod "BlocksKit"

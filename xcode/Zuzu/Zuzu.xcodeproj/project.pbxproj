@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A436C7EE1783E82500B0A008 /* NSDictionary+JSONValueParsing.m in Sources */ = {isa = PBXBuildFile; fileRef = A436C7ED1783E82500B0A008 /* NSDictionary+JSONValueParsing.m */; };
+		A4420DE117836DDC00D8FFF6 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4420DE017836DDC00D8FFF6 /* ProgressView.m */; };
+		A4420DE4178370B900D8FFF6 /* Notifications.m in Sources */ = {isa = PBXBuildFile; fileRef = A4420DE3178370B900D8FFF6 /* Notifications.m */; };
+		A45634CD178320F60086821A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45634CC178320F60086821A /* UIKit.framework */; };
+		A45634CF178320F60086821A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45634CE178320F60086821A /* Foundation.framework */; };
+		A45634D1178320F60086821A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45634D0178320F60086821A /* CoreGraphics.framework */; };
+		A45634D3178320F60086821A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45634D2178320F60086821A /* CoreData.framework */; };
+		A45634D6178320F60086821A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A45634D5178320F60086821A /* Podfile */; };
+		A45634DC178320F60086821A /* ZuzuAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A45634DB178320F60086821A /* ZuzuAPIClient.m */; };
+		A45634E0178320F60086821A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A45634DE178320F60086821A /* InfoPlist.strings */; };
+		A45634E2178320F60086821A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A45634E1178320F60086821A /* main.m */; };
+		A45634E5178320F60086821A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A45634E4178320F60086821A /* AppDelegate.m */; };
+		A45634E7178320F60086821A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A45634E6178320F60086821A /* Default.png */; };
+		A45634E9178320F60086821A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A45634E8178320F60086821A /* Default@2x.png */; };
+		A45634EB178320F60086821A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A45634EA178320F60086821A /* Default-568h@2x.png */; };
+		A45634EF178320F60086821A /* Zuzu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A45634ED178320F60086821A /* Zuzu.xcdatamodeld */; };
+		A45634F2178320F60086821A /* ZuzuIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = A45634F1178320F60086821A /* ZuzuIncrementalStore.m */; };
+		A45634F917832A530086821A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45634F817832A530086821A /* CoreLocation.framework */; };
+		A45634FF17833EB60086821A /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45634FE17833EB60086821A /* IndexViewController.m */; };
+		A456354D178359750086821A /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = A456354C178359750086821A /* Post.m */; };
+		A456355017835B920086821A /* AddPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A456354F17835B920086821A /* AddPostViewController.m */; };
+		A456355217835BE30086821A /* AddPostStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A456355117835BE30086821A /* AddPostStoryboard.storyboard */; };
+		DCD87A6D163B4E9CAEC84F97 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4633A5FCB82A49ABBFF4B73D /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4633A5FCB82A49ABBFF4B73D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9562666BAB0E496E8FE2F1EB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		A436C7EC1783E82500B0A008 /* NSDictionary+JSONValueParsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+JSONValueParsing.h"; path = "Zuzu/NSDictionary+JSONValueParsing.h"; sourceTree = "<group>"; };
+		A436C7ED1783E82500B0A008 /* NSDictionary+JSONValueParsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+JSONValueParsing.m"; path = "Zuzu/NSDictionary+JSONValueParsing.m"; sourceTree = "<group>"; };
+		A4420DDF17836DDC00D8FFF6 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
+		A4420DE017836DDC00D8FFF6 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
+		A4420DE2178370B900D8FFF6 /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Notifications.h; path = Zuzu/Notifications.h; sourceTree = "<group>"; };
+		A4420DE3178370B900D8FFF6 /* Notifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Notifications.m; path = Zuzu/Notifications.m; sourceTree = "<group>"; };
+		A45634C9178320F60086821A /* Zuzu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zuzu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A45634CC178320F60086821A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A45634CE178320F60086821A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A45634D0178320F60086821A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A45634D2178320F60086821A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A45634D5178320F60086821A /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
+		A45634D8178320F60086821A /* Zuzu-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Zuzu-Prefix.pch"; sourceTree = "<group>"; };
+		A45634DA178320F60086821A /* ZuzuAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZuzuAPIClient.h; path = Classes/ZuzuAPIClient.h; sourceTree = "<group>"; };
+		A45634DB178320F60086821A /* ZuzuAPIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZuzuAPIClient.m; path = Classes/ZuzuAPIClient.m; sourceTree = "<group>"; };
+		A45634DD178320F60086821A /* Zuzu-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Zuzu-Info.plist"; sourceTree = "<group>"; };
+		A45634DF178320F60086821A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A45634E1178320F60086821A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A45634E3178320F60086821A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A45634E4178320F60086821A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A45634E6178320F60086821A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		A45634E8178320F60086821A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		A45634EA178320F60086821A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A45634EE178320F60086821A /* Zuzu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Zuzu.xcdatamodel; sourceTree = "<group>"; };
+		A45634F0178320F60086821A /* ZuzuIncrementalStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZuzuIncrementalStore.h; path = Classes/ZuzuIncrementalStore.h; sourceTree = "<group>"; };
+		A45634F1178320F60086821A /* ZuzuIncrementalStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZuzuIncrementalStore.m; path = Classes/ZuzuIncrementalStore.m; sourceTree = "<group>"; };
+		A45634F817832A530086821A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A45634FD17833EB60086821A /* IndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexViewController.h; sourceTree = "<group>"; };
+		A45634FE17833EB60086821A /* IndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexViewController.m; sourceTree = "<group>"; };
+		A456354B178359750086821A /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		A456354C178359750086821A /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		A456354E17835B920086821A /* AddPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPostViewController.h; sourceTree = "<group>"; };
+		A456354F17835B920086821A /* AddPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPostViewController.m; sourceTree = "<group>"; };
+		A456355117835BE30086821A /* AddPostStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddPostStoryboard.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A45634C6178320F60086821A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A45634F917832A530086821A /* CoreLocation.framework in Frameworks */,
+				A45634CD178320F60086821A /* UIKit.framework in Frameworks */,
+				A45634CF178320F60086821A /* Foundation.framework in Frameworks */,
+				A45634D1178320F60086821A /* CoreGraphics.framework in Frameworks */,
+				A45634D3178320F60086821A /* CoreData.framework in Frameworks */,
+				DCD87A6D163B4E9CAEC84F97 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A4420DDE17836DBE00D8FFF6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A4420DDF17836DDC00D8FFF6 /* ProgressView.h */,
+				A4420DE017836DDC00D8FFF6 /* ProgressView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		A45634C0178320F60086821A = {
+			isa = PBXGroup;
+			children = (
+				A45634D4178320F60086821A /* Zuzu */,
+				A4420DE2178370B900D8FFF6 /* Notifications.h */,
+				A4420DE3178370B900D8FFF6 /* Notifications.m */,
+				A436C7EC1783E82500B0A008 /* NSDictionary+JSONValueParsing.h */,
+				A436C7ED1783E82500B0A008 /* NSDictionary+JSONValueParsing.m */,
+				A45634D7178320F60086821A /* Supporting Files */,
+				A45634CB178320F60086821A /* Frameworks */,
+				A45634CA178320F60086821A /* Products */,
+				9562666BAB0E496E8FE2F1EB /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		A45634CA178320F60086821A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A45634C9178320F60086821A /* Zuzu.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A45634CB178320F60086821A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A45634F817832A530086821A /* CoreLocation.framework */,
+				A45634CC178320F60086821A /* UIKit.framework */,
+				A45634CE178320F60086821A /* Foundation.framework */,
+				A45634D0178320F60086821A /* CoreGraphics.framework */,
+				A45634D2178320F60086821A /* CoreData.framework */,
+				4633A5FCB82A49ABBFF4B73D /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A45634D4178320F60086821A /* Zuzu */ = {
+			isa = PBXGroup;
+			children = (
+				A45634D5178320F60086821A /* Podfile */,
+				A45634E3178320F60086821A /* AppDelegate.h */,
+				A45634E4178320F60086821A /* AppDelegate.m */,
+				A45634D9178320F60086821A /* Networking */,
+				A456350017833EBF0086821A /* Controllers */,
+				A45634EC178320F60086821A /* Models */,
+				A4420DDE17836DBE00D8FFF6 /* Views */,
+			);
+			path = Zuzu;
+			sourceTree = "<group>";
+		};
+		A45634D7178320F60086821A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A45634D8178320F60086821A /* Zuzu-Prefix.pch */,
+				A45634DD178320F60086821A /* Zuzu-Info.plist */,
+				A45634DE178320F60086821A /* InfoPlist.strings */,
+				A45634E1178320F60086821A /* main.m */,
+				A45634E6178320F60086821A /* Default.png */,
+				A45634E8178320F60086821A /* Default@2x.png */,
+				A45634EA178320F60086821A /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			path = Zuzu;
+			sourceTree = "<group>";
+		};
+		A45634D9178320F60086821A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A45634DA178320F60086821A /* ZuzuAPIClient.h */,
+				A45634DB178320F60086821A /* ZuzuAPIClient.m */,
+				A45634F0178320F60086821A /* ZuzuIncrementalStore.h */,
+				A45634F1178320F60086821A /* ZuzuIncrementalStore.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		A45634EC178320F60086821A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A45634ED178320F60086821A /* Zuzu.xcdatamodeld */,
+				A456354B178359750086821A /* Post.h */,
+				A456354C178359750086821A /* Post.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A456350017833EBF0086821A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A45634FD17833EB60086821A /* IndexViewController.h */,
+				A45634FE17833EB60086821A /* IndexViewController.m */,
+				A456354E17835B920086821A /* AddPostViewController.h */,
+				A456354F17835B920086821A /* AddPostViewController.m */,
+				A456355117835BE30086821A /* AddPostStoryboard.storyboard */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A45634C8178320F60086821A /* Zuzu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A45634F5178320F60086821A /* Build configuration list for PBXNativeTarget "Zuzu" */;
+			buildPhases = (
+				93D2603293ED4588A6BCFBC1 /* Check Pods Manifest.lock */,
+				A45634C5178320F60086821A /* Sources */,
+				A45634C6178320F60086821A /* Frameworks */,
+				A45634C7178320F60086821A /* Resources */,
+				7C795586B6654CC98F4F2AF0 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Zuzu;
+			productName = Zuzu;
+			productReference = A45634C9178320F60086821A /* Zuzu.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A45634C1178320F60086821A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = marko;
+			};
+			buildConfigurationList = A45634C4178320F60086821A /* Build configuration list for PBXProject "Zuzu" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A45634C0178320F60086821A;
+			productRefGroup = A45634CA178320F60086821A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A45634C8178320F60086821A /* Zuzu */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A45634C7178320F60086821A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A45634D6178320F60086821A /* Podfile in Resources */,
+				A45634E0178320F60086821A /* InfoPlist.strings in Resources */,
+				A45634E7178320F60086821A /* Default.png in Resources */,
+				A45634E9178320F60086821A /* Default@2x.png in Resources */,
+				A45634EB178320F60086821A /* Default-568h@2x.png in Resources */,
+				A456355217835BE30086821A /* AddPostStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7C795586B6654CC98F4F2AF0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		93D2603293ED4588A6BCFBC1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A45634C5178320F60086821A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A45634DC178320F60086821A /* ZuzuAPIClient.m in Sources */,
+				A45634E2178320F60086821A /* main.m in Sources */,
+				A45634E5178320F60086821A /* AppDelegate.m in Sources */,
+				A45634EF178320F60086821A /* Zuzu.xcdatamodeld in Sources */,
+				A45634F2178320F60086821A /* ZuzuIncrementalStore.m in Sources */,
+				A45634FF17833EB60086821A /* IndexViewController.m in Sources */,
+				A456354D178359750086821A /* Post.m in Sources */,
+				A456355017835B920086821A /* AddPostViewController.m in Sources */,
+				A4420DE117836DDC00D8FFF6 /* ProgressView.m in Sources */,
+				A4420DE4178370B900D8FFF6 /* Notifications.m in Sources */,
+				A436C7EE1783E82500B0A008 /* NSDictionary+JSONValueParsing.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A45634DE178320F60086821A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A45634DF178320F60086821A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A45634F3178320F60086821A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A45634F4178320F60086821A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A45634F6178320F60086821A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9562666BAB0E496E8FE2F1EB /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Zuzu/Zuzu-Prefix.pch";
+				INFOPLIST_FILE = "Zuzu/Zuzu-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A45634F7178320F60086821A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9562666BAB0E496E8FE2F1EB /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Zuzu/Zuzu-Prefix.pch";
+				INFOPLIST_FILE = "Zuzu/Zuzu-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A45634C4178320F60086821A /* Build configuration list for PBXProject "Zuzu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A45634F3178320F60086821A /* Debug */,
+				A45634F4178320F60086821A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A45634F5178320F60086821A /* Build configuration list for PBXNativeTarget "Zuzu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A45634F6178320F60086821A /* Debug */,
+				A45634F7178320F60086821A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A45634ED178320F60086821A /* Zuzu.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A45634EE178320F60086821A /* Zuzu.xcdatamodel */,
+			);
+			currentVersion = A45634EE178320F60086821A /* Zuzu.xcdatamodel */;
+			path = Zuzu.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A45634C1178320F60086821A /* Project object */;
+}

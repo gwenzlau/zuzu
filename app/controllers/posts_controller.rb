@@ -1,9 +1,14 @@
 class PostsController < ApplicationController
-	  respond_to :json
+	  respond_to :json, :html
 
-  def index
-    @posts = Post.all
+  def 
+  	lat, lng = params[:lat], params[:lng]
+    if lat and lng
+    @posts = Post.nearby(lat.to_f, lng.to_f)
     respond_with({:posts => @posts}.as_json)
+else
+	respond_with({:message => "Invalid or missing lat/lng params"}, :status => 406)
+	end
   end
 
   def show
