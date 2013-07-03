@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-	  respond_to :json, :html
+	  respond_to :json
+
 
   def 
   	lat, lng = params[:lat], params[:lng]
