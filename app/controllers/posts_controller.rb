@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
-	  respond_to :json
+	  respond_to :json, :html
 
 
-  def 
+  def index
   	lat, lng = params[:lat], params[:lng]
     if lat and lng
     @posts = Post.nearby(lat.to_f, lng.to_f)
