@@ -9,11 +9,8 @@
 #import "Post.h"
 #import "AddPostViewController.h"
 #import "ZuzuAPIClient.h"
-#import "Notifications.h"
 #import "AFNetworking.h"
 #import "ISO8601DateFormatter.h"
-#import "NSDictionary+JSONValueParsing.h"
-#import "BlocksKit.h"
 
 static NSDate * NSDateFromISO8601String(NSString *string) {
     static ISO8601DateFormatter *_iso8601DateFormatter = nil;
@@ -29,9 +26,9 @@ static NSDate * NSDateFromISO8601String(NSString *string) {
     return [_iso8601DateFormatter dateFromString:string];
 }
 
-//static NSString * NSStringFromCoordinate(CLLocationCoordinate2D coordinate) {
-//    return [ NSString stringWithFormat:@"(%f, %f)", coordinate.latitude, coordinate.longitude];
-//}
+static NSString * NSStringFromCoordinate(CLLocationCoordinate2D coordinate) {
+    return [ NSString stringWithFormat:@"(%f, %f)", coordinate.latitude, coordinate.longitude];
+}
 
 static NSString * NSStringFromDate(NSDate *date) {
     static NSDateFormatter *_dateFormatter = nil;
@@ -47,15 +44,18 @@ static NSString * NSStringFromDate(NSDate *date) {
     return [_dateFormatter stringFromDate:date];
 }
 
-//@interface Post ()
-//@property (strong, nonatomic, readwrite) NSDate *timestamp;
-////@property (strong, nonatomic, readwrite) NSString *content;
-//@end
+@interface Post ()
+@property (strong, nonatomic, readwrite) NSDate *timestamp;
+@property (assign, nonatomic, readwrite) CLLocationDegrees latitude;
+@property (assign, nonatomic, readwrite) CLLocationDegrees longitude;
+@end
 
 @implementation Post
-@synthesize content, createdAt;
-//@dynamic content;
-//@dynamic createdAt;
+@synthesize content = _content;
+@synthesize timestamp = _timestamp;
+@synthesize latitude = _latitude;
+@synthesize longitude = _longitude;
+@dynamic location;
 
 -(id)initWithAttributes:(NSDictionary *)attributes {
     self = [super init];
@@ -63,84 +63,51 @@ static NSString * NSStringFromDate(NSDate *date) {
         return nil;
     }
     self.content = [attributes valueForKeyPath:@"content"];
-    self.createdAt = [attributes valueForKeyPath:@"createdAt"];
-
+    self.timestamp = NSDateFromISO8601String([attributes valueForKeyPath:@"createdAt"]);
+    
+    self.latitude = [[attributes valueForKeyPath:@"lat"] doubleValue];
+    self.longitude = [[attributes valueForKeyPath:@"lng"] doubleValue];
+    
     return self;
 }
-+ (void)fetchPosts:(void (^)(NSArray *posts, NSError *error))completionBlock {
-    [[ZuzuAPIClient sharedClient] getPath:@"/posts.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if (operation.response.statusCode == 200) {
-            NSArray *posts = [Post postsWithJSON:responseObject];
-            completionBlock(posts, nil);
-        } else {
-            NSLog(@"Received an HTTP %d: %@", operation.response.statusCode, responseObject);
-            completionBlock(nil, nil);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completionBlock(nil, error);
-    }];
+
+- (CLLocation *)location {
+    return [[CLLocation alloc] initWithLatitude:self.latitude longitude:self.longitude];
 }
-
-+(NSArray *)postsWithJSON:(NSArray *)postsJson {
-    return [postsJson map:^id(id itemJson) {
-        return [Post postFromJSON:itemJson];
++ (void)savePostAtLocation:(CLLocation *)location
+                     block:(void (^)(Post *post, NSError *error))block
+{
+    NSMutableDictionary *mutableParameters = [NSMutableDictionary dictionary];
+    [mutableParameters setObject:[NSNumber numberWithDouble:location.coordinate.latitude] forKey:@"lat"];
+    [mutableParameters setObject:[NSNumber numberWithDouble:location.coordinate.longitude] forKey:@"lng"];
+    
+    NSMutableURLRequest *mutableURLRequest = [[ZuzuAPIClient sharedClient] multipartFormRequestWithMethod:@"POST" path:@"/posts" parameters:mutableParameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
     }];
-}
-
-+(Post *)postFromJSON:(NSDictionary *)dictionary {
-    Post *post = [[Post alloc] init];
- //   [post updateFromJSON:dictionary];
-    
-    return post;
-}
-
-//- (void)updateFromJSON:(NSDictionary *)dictionary {
-//    self.content = [dictionary stringForKey:@"content"];
-//    self.createdAt = [dictionary dateForKey:@"createdAt"];
-//}
-
-- (void)saveWithCompletion:(void (^)(BOOL success, NSError *error))completionBlock {
-    [self saveWithProgress:nil completion:completionBlock];
-}
-
--(void)saveWithProgress:(void (^)(CGFloat progress))progressBlock completion:(void (^)(BOOL success, NSError *error))completionBlock {
-    
-    if (!self.content) self.content = @"";
-    
-    NSDictionary *params = @{
-                             @"post[content]" : self.content,
-                            @"post[createdAt]" : self.createdAt
-                             };
-    
-    NSURLRequest *postRequest = [[ZuzuAPIClient sharedClient] multipartFormRequestWithMethod:@"POST"
-                                                                                        path:@"/posts"
-                                                                                  parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        [formData appendPartWithFormData:self.content name:@"content"];
-    }];
-    AFHTTPRequestOperation *operation = [[AFJSONRequestOperation alloc] initWithRequest:postRequest];
-    [operation setUploadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
-        CGFloat progress = ((CGFloat)totalBytesWritten) / totalBytesExpectedToWrite;
-        progressBlock(progress);
-    }];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if (operation.response.statusCode == 200 || operation.response.statusCode == 201) {
-            NSLog(@"Created, %@", responseObject);
-            NSDictionary *updatedPost = [responseObject objectForKey:@"post"];
-    //        [self updateFromJSON:updatedPost];
-            [self notifyCreated];
-            completionBlock(YES, nil);
-        } else {
-            completionBlock(NO, nil);
+    AFHTTPRequestOperation *operation = [[ZuzuAPIClient sharedClient] HTTPRequestOperationWithRequest:mutableURLRequest success:^(AFHTTPRequestOperation *operation, id JSON) {
+        Post *post = [[Post alloc] initWithAttributes:[JSON valueForKeyPath:@"post"]];
+        
+        if (block) {
+            block(post, nil);
         }
     }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completionBlock(NO,error);
+        if (block) {
+            block(nil, error);
+        }
     }];
     [[ZuzuAPIClient sharedClient] enqueueHTTPRequestOperation:operation];
-};
-
-- (void)notifyCreated {
-    [[NSNotificationCenter defaultCenter] postNotificationName:PostCreatedNotification
-                                                        object:self];
 }
+
+#pragma mark - MKAnnotation
+
+- (NSString *)content {
+    return NSStringFromCoordinate(self.coordinate);
+}
+- (NSString *)subtitle {
+    return NSStringFromDate(self.timestamp);
+}
+
+- (CLLocationCoordinate2D)coordinate {
+    return CLLocationCoordinate2DMake(self.latitude, self.longitude);
+}
+
 @end

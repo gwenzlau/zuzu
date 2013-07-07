@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface IndexViewController : UITableViewController <UITableViewDelegate>
+@interface IndexViewController : UITableViewController <UITableViewDelegate, CLLocationManagerDelegate> {
+@private
+    CLLocationManager *_locationManager;
+    UIActivityIndicatorView *_activityIndicatorView;
+}
 //@property NSManagedObjectContext *managedObjectContext;
 
 @end

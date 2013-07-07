@@ -8,18 +8,27 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <CoreLocation/CoreLocation.h>
+#import <Mapkit/MapKit.h>
 
 
-@interface Post : NSObject
-
-+ (void)fetchPosts:(void (^)(NSArray *posts, NSError *error))completionBlock;
+@interface Post : NSObject <MKAnnotation> {
+    @private
+    NSString *_content;
+    NSDate *_timestamp;
+    
+    CLLocationDegrees _latitude;
+    CLLocationDegrees _longitude;
+}
 
 @property (nonatomic, strong) NSString *content;
-@property (nonatomic, strong) NSDate *createdAt;
+@property (strong, nonatomic, readonly) NSDate *timestamp;
+@property (strong, nonatomic, readonly) CLLocation *location;
 
 - (id)initWithAttributes:(NSDictionary *)attributes;
 
-- (void)saveWithProgress:(void (^)(CGFloat progress))progressBlock completion:(void (^)(BOOL success, NSError *error))completionBlock;
-- (void)saveWithCompletion:(void (^)(BOOL success, NSError *error))completionBlock;
-
++ (void)postsNearLocation:(CLLocation *)location
+                    block:(void (^)(NSArray *posts, NSError *error))block;
++ (void)savePostAtLocation:(CLLocation *)location
+                     block:(void (^)(Post *post, NSError *error))block;
 @end

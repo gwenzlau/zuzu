@@ -8,15 +8,20 @@
 
 #import "AddPostViewController.h"
 #import "Post.h"
-#import "ProgressView.h"
+#import "ZuzuAPIClient.h"
 
 @interface AddPostViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *postTextField;
+@property (assign, nonatomic, readwrite) CLLocationDegrees latitude;
+@property (assign, nonatomic, readwrite) CLLocationDegrees longitude;
 
 @end
 
 @implementation AddPostViewController
 
+@synthesize latitude = _latitude;
+@synthesize longitude = _longitude;
+@synthesize postTextField = _postTextField;
 
 - (void)viewDidLoad
 {
@@ -24,41 +29,23 @@
     
     self.navigationItem.rightBarButtonItem = [self saveButton];
   //  self.navigationItem.leftBarButtonItem = [self onCancel];
+    
+}
 
+- (CLLocation *)location {
+    return [[CLLocation alloc] initWithLatitude:self.latitude longitude:self.longitude];
 }
 
 -(UIBarButtonItem *)saveButton {
-    return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save:)];
+    return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(savePostAtLocation:block:)];
 }
 
 -(UIBarButtonItem *)onCancel {
     return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismiss:)];
 }
 
-
 -(void)dismiss:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)save:(id)sender {
-    Post *post = [[Post alloc] init];
-    post.content = self.postTextField.text;
-    
-    [self.view endEditing:YES];
-    
-    ProgressView *progressView = [ProgressView presentInWindow:self.view.window];
-    
-    //save it
-    [post saveWithProgress:^(CGFloat progress) {
-        [progressView setProgress:progress];
-    } completion:^(BOOL success, NSError *error) {
-        [progressView dismiss];
-        if (success) {
-            [self.navigationController popViewControllerAnimated:YES];
-        } else {
-            NSLog(@"ERROR: %@", error);
-        }
-    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,8 +53,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 #pragma mark - Table view delegate
 

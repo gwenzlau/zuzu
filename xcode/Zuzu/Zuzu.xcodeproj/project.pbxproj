@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A436C7EE1783E82500B0A008 /* NSDictionary+JSONValueParsing.m in Sources */ = {isa = PBXBuildFile; fileRef = A436C7ED1783E82500B0A008 /* NSDictionary+JSONValueParsing.m */; };
-		A4420DE117836DDC00D8FFF6 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4420DE017836DDC00D8FFF6 /* ProgressView.m */; };
-		A4420DE4178370B900D8FFF6 /* Notifications.m in Sources */ = {isa = PBXBuildFile; fileRef = A4420DE3178370B900D8FFF6 /* Notifications.m */; };
+		A436C7F01785C94300B0A008 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A436C7EF1785C94200B0A008 /* MapKit.framework */; };
 		A45634CD178320F60086821A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45634CC178320F60086821A /* UIKit.framework */; };
 		A45634CF178320F60086821A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45634CE178320F60086821A /* Foundation.framework */; };
 		A45634D1178320F60086821A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45634D0178320F60086821A /* CoreGraphics.framework */; };
@@ -35,12 +33,7 @@
 /* Begin PBXFileReference section */
 		4633A5FCB82A49ABBFF4B73D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9562666BAB0E496E8FE2F1EB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		A436C7EC1783E82500B0A008 /* NSDictionary+JSONValueParsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+JSONValueParsing.h"; path = "Zuzu/NSDictionary+JSONValueParsing.h"; sourceTree = "<group>"; };
-		A436C7ED1783E82500B0A008 /* NSDictionary+JSONValueParsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+JSONValueParsing.m"; path = "Zuzu/NSDictionary+JSONValueParsing.m"; sourceTree = "<group>"; };
-		A4420DDF17836DDC00D8FFF6 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
-		A4420DE017836DDC00D8FFF6 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
-		A4420DE2178370B900D8FFF6 /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Notifications.h; path = Zuzu/Notifications.h; sourceTree = "<group>"; };
-		A4420DE3178370B900D8FFF6 /* Notifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Notifications.m; path = Zuzu/Notifications.m; sourceTree = "<group>"; };
+		A436C7EF1785C94200B0A008 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A45634C9178320F60086821A /* Zuzu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zuzu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45634CC178320F60086821A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A45634CE178320F60086821A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -76,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A436C7F01785C94300B0A008 /* MapKit.framework in Frameworks */,
 				A45634F917832A530086821A /* CoreLocation.framework in Frameworks */,
 				A45634CD178320F60086821A /* UIKit.framework in Frameworks */,
 				A45634CF178320F60086821A /* Foundation.framework in Frameworks */,
@@ -91,8 +85,6 @@
 		A4420DDE17836DBE00D8FFF6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A4420DDF17836DDC00D8FFF6 /* ProgressView.h */,
-				A4420DE017836DDC00D8FFF6 /* ProgressView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -101,10 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				A45634D4178320F60086821A /* Zuzu */,
-				A4420DE2178370B900D8FFF6 /* Notifications.h */,
-				A4420DE3178370B900D8FFF6 /* Notifications.m */,
-				A436C7EC1783E82500B0A008 /* NSDictionary+JSONValueParsing.h */,
-				A436C7ED1783E82500B0A008 /* NSDictionary+JSONValueParsing.m */,
 				A45634D7178320F60086821A /* Supporting Files */,
 				A45634CB178320F60086821A /* Frameworks */,
 				A45634CA178320F60086821A /* Products */,
@@ -123,6 +111,7 @@
 		A45634CB178320F60086821A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A436C7EF1785C94200B0A008 /* MapKit.framework */,
 				A45634F817832A530086821A /* CoreLocation.framework */,
 				A45634CC178320F60086821A /* UIKit.framework */,
 				A45634CE178320F60086821A /* Foundation.framework */,
@@ -303,9 +292,6 @@
 				A45634FF17833EB60086821A /* IndexViewController.m in Sources */,
 				A456354D178359750086821A /* Post.m in Sources */,
 				A456355017835B920086821A /* AddPostViewController.m in Sources */,
-				A4420DE117836DDC00D8FFF6 /* ProgressView.m in Sources */,
-				A4420DE4178370B900D8FFF6 /* Notifications.m in Sources */,
-				A436C7EE1783E82500B0A008 /* NSDictionary+JSONValueParsing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
