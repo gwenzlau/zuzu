@@ -54,7 +54,6 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
     self.locationManager.distanceFilter = 80.0f;
     [self.locationManager startUpdatingLocation];
     
-    [self loadPosts];
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,18 +68,6 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
                                                          action:@selector(addPost:)];
 }
 
-//loadposts is causing a crash - but I dont htink the locationManager method is actually makign a GET request... fix this before MATTT!
-
-
-//- (void)loadPosts {
-//    [Post postsNearLocation:_locationManager block:^(NSArray *posts, NSError *error) {
-//        if (error) {
-//            [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Nearby Posts Failed", nil) message:[error localizedFailureReason] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil] show];
-//        } else {
-//            [self.tableView insertRowsAtIndexPaths:posts withRowAnimation:YES];
-//        }
-//    }];
-//}
 - (void)locationManager: (CLLocationManager *)manager
 didUpdateLocations:(CLLocation *)newLocation
      fromLocation:(CLLocation *)oldLocation

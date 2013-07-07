@@ -17,6 +17,7 @@ class Post < ActiveRecord::Base
   def as_json(options = nil)
     {
       :content => self.content,
+
       :lat => self.lat,
       :lng => self.lng,
 
