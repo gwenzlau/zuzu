@@ -97,6 +97,30 @@ static NSString * NSStringFromDate(NSDate *date) {
     [[ZuzuAPIClient sharedClient] enqueueHTTPRequestOperation:operation];
 }
 
+
++ (void)postsNearLocation:(CLLocation *)location
+                    block:(void (^)(NSArray *posts, NSError *error))block {
+    NSMutableDictionary *mutableParameters = [NSMutableDictionary dictionary];
+    [mutableParameters setObject:[NSNumber numberWithDouble:location.coordinate.latitude] forKey:@"lat"];
+    [mutableParameters setObject:[NSNumber numberWithDouble:location.coordinate.longitude] forKey:@"lng"];
+    
+    [[ZuzuAPIClient sharedClient] getPath:@"/posts" parameters:mutableParameters success:^(AFHTTPRequestOperation *operation, id JSON) {
+        NSMutableArray *mutablePosts = [NSMutableArray array];
+        for (NSDictionary *attributes in [JSON valueForKey:@"posts"]) {
+            Post *post = [[Post alloc] initWithAttributes:attributes];
+            [mutablePosts addObject:post];
+        }
+        
+        if (block ) {
+            block([NSArray arrayWithArray:mutablePosts], nil);
+        }
+    }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (block) {
+            block(nil, error);
+        }
+    }];
+}
+
 #pragma mark - MKAnnotation
 
 - (NSString *)content {

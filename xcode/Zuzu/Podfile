@@ -2,3 +2,4 @@ platform :ios, "6.0"
 pod 'AFNetworking'
 pod 'AFIncrementalStore'
 pod 'ISO8601DateFormatter', '~> 0.6'
+pod 'SSPullToRefresh'

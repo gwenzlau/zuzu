@@ -18,12 +18,6 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking 3
 #define COCOAPODS_VERSION_PATCH_AFNetworking 1
 
-// BlocksKit
-#define COCOAPODS_POD_AVAILABLE_BlocksKit
-#define COCOAPODS_VERSION_MAJOR_BlocksKit 1
-#define COCOAPODS_VERSION_MINOR_BlocksKit 8
-#define COCOAPODS_VERSION_PATCH_BlocksKit 2
-
 // ISO8601DateFormatter
 #define COCOAPODS_POD_AVAILABLE_ISO8601DateFormatter
 #define COCOAPODS_VERSION_MAJOR_ISO8601DateFormatter 0
@@ -36,15 +30,15 @@
 #define COCOAPODS_VERSION_MINOR_InflectorKit 0
 #define COCOAPODS_VERSION_PATCH_InflectorKit 1
 
+// SSPullToRefresh
+#define COCOAPODS_POD_AVAILABLE_SSPullToRefresh
+#define COCOAPODS_VERSION_MAJOR_SSPullToRefresh 1
+#define COCOAPODS_VERSION_MINOR_SSPullToRefresh 1
+#define COCOAPODS_VERSION_PATCH_SSPullToRefresh 2
+
 // TransformerKit
 #define COCOAPODS_POD_AVAILABLE_TransformerKit
 #define COCOAPODS_VERSION_MAJOR_TransformerKit 0
 #define COCOAPODS_VERSION_MINOR_TransformerKit 2
 #define COCOAPODS_VERSION_PATCH_TransformerKit 4
-
-// libffi
-#define COCOAPODS_POD_AVAILABLE_libffi
-#define COCOAPODS_VERSION_MAJOR_libffi 3
-#define COCOAPODS_VERSION_MINOR_libffi 0
-#define COCOAPODS_VERSION_PATCH_libffi 13
 

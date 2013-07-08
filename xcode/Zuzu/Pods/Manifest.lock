@@ -4,26 +4,23 @@ PODS:
     - InflectorKit
     - TransformerKit
   - AFNetworking (1.3.1)
-  - BlocksKit (1.8.2):
-    - libffi
   - InflectorKit (0.0.1)
   - ISO8601DateFormatter (0.6)
-  - libffi (3.0.13)
+  - SSPullToRefresh (1.1.2)
   - TransformerKit (0.2.4)
 
 DEPENDENCIES:
   - AFIncrementalStore
   - AFNetworking
-  - BlocksKit
   - ISO8601DateFormatter (~> 0.6)
+  - SSPullToRefresh
 
 SPEC CHECKSUMS:
   AFIncrementalStore: fbcc94b9cdec7091516a6db07293e84b4ddcb807
   AFNetworking: 9ec8aafb9269236a7630bd8d9838ce2ba30fa2a0
-  BlocksKit: 7396526b0816734103f6133fbb1a520c8b04e80c
   InflectorKit: 9dccab02f95541093995adac639342c9eb9e6c12
   ISO8601DateFormatter: 077ce9d8cfba171bc1ced6cba0d2ae4aefab7619
-  libffi: 64ef39353e747bb2b25e1026afd96a157bf9231c
+  SSPullToRefresh: 8d8360b0ff0dc7b344656b48ddf9732c47e78806
   TransformerKit: 3c60759694b70d41b833dfe4005b031762d54e7f
 
 COCOAPODS: 0.21.0

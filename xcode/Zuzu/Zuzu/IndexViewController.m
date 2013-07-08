@@ -7,6 +7,7 @@
 #import "IndexViewController.h"
 #import "Post.h"
 #import "AFJSONRequestOperation.h"
+#import "SSPullToRefresh.h"
 
 static CLLocationDistance const kMapRegionSpanDistance = 5000;
 
@@ -14,7 +15,7 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
 @property (strong, nonatomic, readwrite) CLLocationManager *locationManager;
 @property (nonatomic, strong) NSMutableArray *posts;
 @property (strong, nonatomic, readwrite) UIActivityIndicatorView *activityIndicatorView;
-
+@property (nonatomic, strong) SSPullToRefreshView *pullToRefreshView;
 @end
 
 @implementation IndexViewController
@@ -22,13 +23,7 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
 @synthesize tableView = _tableView;
 @synthesize locationManager = _locationManager;
 @synthesize activityIndicatorView = _activityIndicatorView;
-
-- (void)loadView {
-    [super loadView];
-
-    self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-    self.activityIndicatorView.hidesWhenStopped = YES;
-}
+@synthesize pullToRefreshView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,6 +32,8 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
     self.navigationItem.rightBarButtonItem = [self addPostButton];
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(takePhoto:)];
+    
+    self.pullToRefreshView = [[SSPullToRefreshView alloc] initWithScrollView:self.tableView delegate:self];
  
     NSURL *url = [NSURL URLWithString:@"sleepy-mountain-9630.herokuapp.com/posts.json"];
     [AFJSONRequestOperation JSONRequestOperationWithRequest:[NSURLRequest requestWithURL:url] success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
@@ -54,6 +51,7 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
     self.locationManager.distanceFilter = 80.0f;
     [self.locationManager startUpdatingLocation];
     
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,21 +65,71 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
                                                          target:self
                                                          action:@selector(addPost:)];
 }
+-(void)refresh {
+    [self.pullToRefreshView startLoading];
+//    [postsNearLocation:(CLLocationManager *)manager
+//         didUpdateLocations:(CLLocation *)newLocation
+//               fromLocation:(CLLocation *)oldLocation
+//                      block:^(NSArray *posts, NSError *error) {
+//        dispatch_queue_t backgroundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//        dispatch_after(backgroundQueue, ^(void){
+//            [_objects removeAllObjects];
+//            for (int i = 0; i < 25; i++) {
+//                [self insertNewObject:nil];
+//            }
+//            
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [self.pullToRefreshView finishLoading];
+//                [self.tableView reloadData];
+//            });
+//        });
+//
+//    }];
+}
+- (void)pullToRefreshViewDidStartLoading:(SSPullToRefreshView *)view {
+    [self refresh];
+}
 
 - (void)locationManager: (CLLocationManager *)manager
-didUpdateLocations:(CLLocation *)newLocation
-     fromLocation:(CLLocation *)oldLocation
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
 {
     [self.activityIndicatorView startAnimating];
     [Post postsNearLocation:newLocation block:^(NSArray *posts, NSError *error) {
-     [self.activityIndicatorView stopAnimating];
-        if (error) {
-            [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Nearby Posts Failed", nil) message:[error localizedFailureReason] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil] show];
-        } else {
+        [self.activityIndicatorView stopAnimating];
+        if (posts) {
+            NSLog(@"Recieved %d posts", posts.count);
+            self.posts = [NSMutableArray arrayWithArray:posts];
+            [self.tableView reloadData];
+            [self.tableView setNeedsLayout];
             [self.tableView insertRowsAtIndexPaths:posts withRowAnimation:YES];
+            
+        } else {
+          [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Nearby Posts Failed", nil)
+                                      message:[error localizedFailureReason]
+                                     delegate:nil
+                            cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                            otherButtonTitles:nil, nil] show];
         }
     }];
+
+    
 }
+
+//- (void)locationManager: (CLLocationManager *)manager
+//didUpdateLocations:(CLLocation *)newLocation
+//     fromLocation:(CLLocation *)oldLocation
+//{
+//    [self.activityIndicatorView startAnimating];
+//    [Post postsNearLocation:newLocation block:^(NSArray *posts, NSError *error) {
+//     [self.activityIndicatorView stopAnimating];
+//        if (error) {
+//            [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Nearby Posts Failed", nil) message:[error localizedFailureReason] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil] show];
+//        } else {
+//            [self.tableView insertRowsAtIndexPaths:posts withRowAnimation:YES];
+//        }
+//    }];
+//}
 
 - (void)addPost:(id)sender {
     UIStoryboard *addPostStoryBoard = [UIStoryboard storyboardWithName:@"AddPostStoryboard"
@@ -96,6 +144,16 @@ didUpdateLocations:(CLLocation *)newLocation
 
 -(void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - Pull to refresh
+
+- (BOOL)pullToRefreshViewShouldStartLoading:(SSPullToRefreshView *)view {
+    return YES;
+}
+
+
+- (void)pullToRefreshViewDidFinishLoading:(SSPullToRefreshView *)view {
 }
 
 #pragma mark - Table view delegate

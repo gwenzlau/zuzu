@@ -1,12 +1,11 @@
 #include "Pods-AFIncrementalStore.xcconfig"
 #include "Pods-AFNetworking.xcconfig"
-#include "Pods-BlocksKit.xcconfig"
 #include "Pods-ISO8601DateFormatter.xcconfig"
 #include "Pods-InflectorKit.xcconfig"
+#include "Pods-SSPullToRefresh.xcconfig"
 #include "Pods-TransformerKit.xcconfig"
-#include "Pods-libffi.xcconfig"
 ALWAYS_SEARCH_USER_PATHS = YES
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFIncrementalStore" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/BlocksKit" "${PODS_ROOT}/Headers/ISO8601DateFormatter" "${PODS_ROOT}/Headers/InflectorKit" "${PODS_ROOT}/Headers/TransformerKit" "${PODS_ROOT}/Headers/libffi"
-OTHER_LDFLAGS = -ObjC ${PODS_AFINCREMENTALSTORE_OTHER_LDFLAGS} ${PODS_AFNETWORKING_OTHER_LDFLAGS} ${PODS_BLOCKSKIT_OTHER_LDFLAGS} ${PODS_LIBFFI_OTHER_LDFLAGS}
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFIncrementalStore" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/ISO8601DateFormatter" "${PODS_ROOT}/Headers/InflectorKit" "${PODS_ROOT}/Headers/SSPullToRefresh" "${PODS_ROOT}/Headers/TransformerKit"
+OTHER_LDFLAGS = -ObjC ${PODS_AFINCREMENTALSTORE_OTHER_LDFLAGS} ${PODS_AFNETWORKING_OTHER_LDFLAGS}
 PODS_ROOT = ${SRCROOT}/Pods
