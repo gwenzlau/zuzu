@@ -33,8 +33,6 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(takePhoto:)];
     
-    self.pullToRefreshView = [[SSPullToRefreshView alloc] initWithScrollView:self.tableView delegate:self];
- 
     NSURL *url = [NSURL URLWithString:@"sleepy-mountain-9630.herokuapp.com/posts.json"];
     [AFJSONRequestOperation JSONRequestOperationWithRequest:[NSURLRequest requestWithURL:url] success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         for (NSDictionary *attributes in [JSON valueForKeyPath:@"posts"]) {
@@ -51,6 +49,8 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
     self.locationManager.distanceFilter = 80.0f;
     [self.locationManager startUpdatingLocation];
     
+    self.pullToRefreshView = [[SSPullToRefreshView alloc] initWithScrollView:self.tableView delegate:self];
+    //[self refresh];
     
 }
 
@@ -67,25 +67,31 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
 }
 -(void)refresh {
     [self.pullToRefreshView startLoading];
-//    [postsNearLocation:(CLLocationManager *)manager
-//         didUpdateLocations:(CLLocation *)newLocation
-//               fromLocation:(CLLocation *)oldLocation
-//                      block:^(NSArray *posts, NSError *error) {
-//        dispatch_queue_t backgroundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-//        dispatch_after(backgroundQueue, ^(void){
-//            [_objects removeAllObjects];
-//            for (int i = 0; i < 25; i++) {
-//                [self insertNewObject:nil];
-//            }
-//            
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                [self.pullToRefreshView finishLoading];
-//                [self.tableView reloadData];
-//            });
-//        });
-//
-//    }];
+    [self locationManager];
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        dispatch_queue_t backgroundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        dispatch_after(popTime, backgroundQueue, ^(void){
+            [_posts removeAllObjects];
+            for (int i = 0; i < 25; i++) {
+                [self insertNewPost:nil];
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.pullToRefreshView finishLoading];
+                [self.tableView reloadData];
+        });
+    });
 }
+
+- (void)insertNewPost:(id)sender {
+    if (!_posts) {
+        _posts = [[NSMutableArray alloc] init];
+    }
+    [_posts insertObject:[NSDictionary dictionary] atIndex:0];
+}
+
+
 - (void)pullToRefreshViewDidStartLoading:(SSPullToRefreshView *)view {
     [self refresh];
 }
@@ -116,21 +122,6 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
     
 }
 
-//- (void)locationManager: (CLLocationManager *)manager
-//didUpdateLocations:(CLLocation *)newLocation
-//     fromLocation:(CLLocation *)oldLocation
-//{
-//    [self.activityIndicatorView startAnimating];
-//    [Post postsNearLocation:newLocation block:^(NSArray *posts, NSError *error) {
-//     [self.activityIndicatorView stopAnimating];
-//        if (error) {
-//            [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Nearby Posts Failed", nil) message:[error localizedFailureReason] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil] show];
-//        } else {
-//            [self.tableView insertRowsAtIndexPaths:posts withRowAnimation:YES];
-//        }
-//    }];
-//}
-
 - (void)addPost:(id)sender {
     UIStoryboard *addPostStoryBoard = [UIStoryboard storyboardWithName:@"AddPostStoryboard"
                                                                 bundle:nil];
@@ -151,7 +142,6 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
 - (BOOL)pullToRefreshViewShouldStartLoading:(SSPullToRefreshView *)view {
     return YES;
 }
-
 
 - (void)pullToRefreshViewDidFinishLoading:(SSPullToRefreshView *)view {
 }
