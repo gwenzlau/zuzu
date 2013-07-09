@@ -56,15 +56,15 @@ static NSString * NSStringFromCoordinate(CLLocationCoordinate2D coordinate) {
 }
 
 -(UIBarButtonItem *)saveButton {
-    return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(savePostAtLocation:)];
+    return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(onSave:)];
 }
 
-- (void)savePostAtLocation: (id)sender  {
+- (void)onSave: (id)sender  {
     Post *post = [[Post alloc] init];
     post.content = self.postTextField.text;
     [self.view endEditing:YES];
     
-
+    
 //        NSMutableDictionary *mutableParameters = [NSMutableDictionary dictionary];
 //        [mutableParameters setObject:[NSNumber numberWithDouble:location.coordinate.latitude] forKey:@"lat"];
 //        [mutableParameters setObject:[NSNumber numberWithDouble:location.coordinate.longitude] forKey:@"lng"];
@@ -73,16 +73,17 @@ static NSString * NSStringFromCoordinate(CLLocationCoordinate2D coordinate) {
         }];
         AFHTTPRequestOperation *operation = [[ZuzuAPIClient sharedClient] HTTPRequestOperationWithRequest:mutableURLRequest success:^(AFHTTPRequestOperation *operation, id JSON) {
             Post *post = [[Post alloc] initWithAttributes:[JSON valueForKeyPath:@"post"]];
-            
-            if (post, nil);
+            if (post, nil) {
+                [self.navigationController popViewControllerAnimated:YES];
+            }
         }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             if  
-                (nil, error);
-            
+                (nil, error) {
+                    NSLog(@"Error: %@", error);
+                }
         }];
         [[ZuzuAPIClient sharedClient] enqueueHTTPRequestOperation:operation];
     }
-
 
 
 -(UIBarButtonItem *)onCancel {
