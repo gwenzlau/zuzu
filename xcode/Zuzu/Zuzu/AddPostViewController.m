@@ -75,6 +75,7 @@ static NSString * NSStringFromCoordinate(CLLocationCoordinate2D coordinate) {
             Post *post = [[Post alloc] initWithAttributes:[JSON valueForKeyPath:@"post"]];
             if (post, nil) {
                 [self.navigationController popViewControllerAnimated:YES];
+                NSLog(@"Success!");
             }
         }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             if  
