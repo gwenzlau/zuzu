@@ -1,4 +1,6 @@
 Zuzu::Application.routes.draw do
+  mount_opro_oauth
+
   get "pages/home"
 
   get "users/show"
