@@ -39,14 +39,14 @@ static NSString * NSStringFromCoordinate(CLLocationCoordinate2D coordinate) {
     
 }
 
--(id)initWithAttributes:(NSDictionary *)attributes {
+-(id)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     if (!self) {
         return nil;
     }
    
-    self.latitude = [[attributes valueForKeyPath:@"lat"] doubleValue];
-    self.longitude = [[attributes valueForKeyPath:@"lng"] doubleValue];
+    self.latitude = [[dictionary valueForKeyPath:@"lat"] doubleValue];
+    self.longitude = [[dictionary valueForKeyPath:@"lng"] doubleValue];
     
     return self;
 }
@@ -72,7 +72,7 @@ static NSString * NSStringFromCoordinate(CLLocationCoordinate2D coordinate) {
         NSMutableURLRequest *mutableURLRequest = [[ZuzuAPIClient sharedClient] multipartFormRequestWithMethod:@"POST" path:@"/posts" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         }];
         AFHTTPRequestOperation *operation = [[ZuzuAPIClient sharedClient] HTTPRequestOperationWithRequest:mutableURLRequest success:^(AFHTTPRequestOperation *operation, id JSON) {
-            Post *post = [[Post alloc] initWithAttributes:[JSON valueForKeyPath:@"post"]];
+            Post *post = [[Post alloc] initWithDictionary:[JSON valueForKeyPath:@"post"]];
             if (post, nil) {
                 [self.navigationController popViewControllerAnimated:YES];
                 NSLog(@"Success!");

@@ -23,6 +23,7 @@ static NSString * const kZuzuAPIBaseURLString = @"http://sleepy-mountain-9630.he
     
     [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
     [self setDefaultHeader:@"Accept" value:@"application/json"];
+    self.parameterEncoding = AFJSONParameterEncoding;
     
     return self;
 }

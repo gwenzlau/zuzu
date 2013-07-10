@@ -5,6 +5,9 @@ gem "paperclip", "~> 3.0"
 gem 'aws-sdk', '1.3.4'
 gem "unicorn", "~> 4.6.3"
 gem "rack-timeout"
+gem 'devise'
+gem 'bootstrap-sass', '~> 2.3.1.0'
+gem 'simple_form'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

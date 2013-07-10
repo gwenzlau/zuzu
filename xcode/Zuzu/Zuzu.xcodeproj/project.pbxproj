@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		A436C7F01785C94300B0A008 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A436C7EF1785C94200B0A008 /* MapKit.framework */; };
+		A436C7F2178CB13000B0A008 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A436C7F1178CB13000B0A008 /* Default.png */; };
+		A436C7F4178CB1C600B0A008 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A436C7F3178CB1C600B0A008 /* Default@2x.png */; };
+		A436C7F6178CB1E600B0A008 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A436C7F5178CB1E600B0A008 /* Default-568h@2x.png */; };
 		A45634CD178320F60086821A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45634CC178320F60086821A /* UIKit.framework */; };
 		A45634CF178320F60086821A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45634CE178320F60086821A /* Foundation.framework */; };
 		A45634D1178320F60086821A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45634D0178320F60086821A /* CoreGraphics.framework */; };
-		A45634D3178320F60086821A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45634D2178320F60086821A /* CoreData.framework */; };
 		A45634D6178320F60086821A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A45634D5178320F60086821A /* Podfile */; };
 		A45634DC178320F60086821A /* ZuzuAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A45634DB178320F60086821A /* ZuzuAPIClient.m */; };
 		A45634E0178320F60086821A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A45634DE178320F60086821A /* InfoPlist.strings */; };
@@ -20,7 +22,6 @@
 		A45634E7178320F60086821A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A45634E6178320F60086821A /* Default.png */; };
 		A45634E9178320F60086821A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A45634E8178320F60086821A /* Default@2x.png */; };
 		A45634EB178320F60086821A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A45634EA178320F60086821A /* Default-568h@2x.png */; };
-		A45634EF178320F60086821A /* Zuzu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A45634ED178320F60086821A /* Zuzu.xcdatamodeld */; };
 		A45634F2178320F60086821A /* ZuzuIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = A45634F1178320F60086821A /* ZuzuIncrementalStore.m */; };
 		A45634F917832A530086821A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45634F817832A530086821A /* CoreLocation.framework */; };
 		A45634FF17833EB60086821A /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45634FE17833EB60086821A /* IndexViewController.m */; };
@@ -34,11 +35,13 @@
 		4633A5FCB82A49ABBFF4B73D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9562666BAB0E496E8FE2F1EB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		A436C7EF1785C94200B0A008 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A436C7F1178CB13000B0A008 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		A436C7F3178CB1C600B0A008 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		A436C7F5178CB1E600B0A008 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		A45634C9178320F60086821A /* Zuzu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zuzu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45634CC178320F60086821A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A45634CE178320F60086821A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A45634D0178320F60086821A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		A45634D2178320F60086821A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A45634D5178320F60086821A /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
 		A45634D8178320F60086821A /* Zuzu-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Zuzu-Prefix.pch"; sourceTree = "<group>"; };
 		A45634DA178320F60086821A /* ZuzuAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZuzuAPIClient.h; path = Classes/ZuzuAPIClient.h; sourceTree = "<group>"; };
@@ -51,7 +54,6 @@
 		A45634E6178320F60086821A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		A45634E8178320F60086821A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		A45634EA178320F60086821A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		A45634EE178320F60086821A /* Zuzu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Zuzu.xcdatamodel; sourceTree = "<group>"; };
 		A45634F0178320F60086821A /* ZuzuIncrementalStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZuzuIncrementalStore.h; path = Classes/ZuzuIncrementalStore.h; sourceTree = "<group>"; };
 		A45634F1178320F60086821A /* ZuzuIncrementalStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZuzuIncrementalStore.m; path = Classes/ZuzuIncrementalStore.m; sourceTree = "<group>"; };
 		A45634F817832A530086821A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -74,7 +76,6 @@
 				A45634CD178320F60086821A /* UIKit.framework in Frameworks */,
 				A45634CF178320F60086821A /* Foundation.framework in Frameworks */,
 				A45634D1178320F60086821A /* CoreGraphics.framework in Frameworks */,
-				A45634D3178320F60086821A /* CoreData.framework in Frameworks */,
 				DCD87A6D163B4E9CAEC84F97 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +83,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A436C7F7178CB66100B0A008 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A436C7F5178CB1E600B0A008 /* Default-568h@2x.png */,
+				A436C7F3178CB1C600B0A008 /* Default@2x.png */,
+				A436C7F1178CB13000B0A008 /* Default.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		A4420DDE17836DBE00D8FFF6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,7 +127,6 @@
 				A45634CC178320F60086821A /* UIKit.framework */,
 				A45634CE178320F60086821A /* Foundation.framework */,
 				A45634D0178320F60086821A /* CoreGraphics.framework */,
-				A45634D2178320F60086821A /* CoreData.framework */,
 				4633A5FCB82A49ABBFF4B73D /* libPods.a */,
 			);
 			name = Frameworks;
@@ -139,6 +149,7 @@
 		A45634D7178320F60086821A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A436C7F7178CB66100B0A008 /* Images */,
 				A45634D8178320F60086821A /* Zuzu-Prefix.pch */,
 				A45634DD178320F60086821A /* Zuzu-Info.plist */,
 				A45634DE178320F60086821A /* InfoPlist.strings */,
@@ -165,7 +176,6 @@
 		A45634EC178320F60086821A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A45634ED178320F60086821A /* Zuzu.xcdatamodeld */,
 				A456354B178359750086821A /* Post.h */,
 				A456354C178359750086821A /* Post.m */,
 			);
@@ -243,6 +253,9 @@
 				A45634E9178320F60086821A /* Default@2x.png in Resources */,
 				A45634EB178320F60086821A /* Default-568h@2x.png in Resources */,
 				A456355217835BE30086821A /* AddPostStoryboard.storyboard in Resources */,
+				A436C7F2178CB13000B0A008 /* Default.png in Resources */,
+				A436C7F4178CB1C600B0A008 /* Default@2x.png in Resources */,
+				A436C7F6178CB1E600B0A008 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +300,6 @@
 				A45634DC178320F60086821A /* ZuzuAPIClient.m in Sources */,
 				A45634E2178320F60086821A /* main.m in Sources */,
 				A45634E5178320F60086821A /* AppDelegate.m in Sources */,
-				A45634EF178320F60086821A /* Zuzu.xcdatamodeld in Sources */,
 				A45634F2178320F60086821A /* ZuzuIncrementalStore.m in Sources */,
 				A45634FF17833EB60086821A /* IndexViewController.m in Sources */,
 				A456354D178359750086821A /* Post.m in Sources */,
@@ -411,19 +423,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		A45634ED178320F60086821A /* Zuzu.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				A45634EE178320F60086821A /* Zuzu.xcdatamodel */,
-			);
-			currentVersion = A45634EE178320F60086821A /* Zuzu.xcdatamodel */;
-			path = Zuzu.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = A45634C1178320F60086821A /* Project object */;
 }

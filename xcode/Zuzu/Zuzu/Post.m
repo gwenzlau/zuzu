@@ -46,92 +46,117 @@ static NSString * NSStringFromDate(NSDate *date) {
 
 @interface Post ()
 @property (strong, nonatomic, readwrite) NSDate *timestamp;
-@property (assign, nonatomic, readwrite) CLLocationDegrees latitude;
-@property (assign, nonatomic, readwrite) CLLocationDegrees longitude;
+//@property (assign, nonatomic, readwrite) CLLocationDegrees latitude;
+//@property (assign, nonatomic, readwrite) CLLocationDegrees longitude;
 @end
 
 @implementation Post
 @synthesize content = _content;
 @synthesize timestamp = _timestamp;
-@synthesize latitude = _latitude;
-@synthesize longitude = _longitude;
 @dynamic location;
 
--(id)initWithAttributes:(NSDictionary *)attributes {
+-(id)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     if (!self) {
         return nil;
     }
-    self.content = [attributes valueForKeyPath:@"content"];
-    self.timestamp = NSDateFromISO8601String([attributes valueForKeyPath:@"createdAt"]);
-    
-    self.latitude = [[attributes valueForKeyPath:@"lat"] doubleValue];
-    self.longitude = [[attributes valueForKeyPath:@"lng"] doubleValue];
+    self.content = [dictionary valueForKeyPath:@"content"];
+    self.timestamp = NSDateFromISO8601String([dictionary valueForKeyPath:@"createdAt"]);
+    self.location = [[CLLocation alloc] initWithLatitude:[[dictionary valueForKey:@"lat"] doubleValue] longitude:[[dictionary valueForKey:@"lng"] doubleValue]];
     
     return self;
 }
 
-- (CLLocation *)location {
-    return [[CLLocation alloc] initWithLatitude:self.latitude longitude:self.longitude];
-}
+//- (CLLocation *)location {
+//    return [[CLLocation alloc] initWithLatitude:self.latitude longitude:self.longitude];
+//}
 + (void)savePostAtLocation:(CLLocation *)location
-                     block:(void (^)(Post *post, NSError *error))block
+                     withContent:(NSString *)content
+                     block:(void (^)(Post *, NSError *))block
 {
-    NSMutableDictionary *mutableParameters = [NSMutableDictionary dictionary];
-    [mutableParameters setObject:[NSNumber numberWithDouble:location.coordinate.latitude] forKey:@"lat"];
-    [mutableParameters setObject:[NSNumber numberWithDouble:location.coordinate.longitude] forKey:@"lng"];
-    
-    NSMutableURLRequest *mutableURLRequest = [[ZuzuAPIClient sharedClient] multipartFormRequestWithMethod:@"POST" path:@"/posts" parameters:mutableParameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-    }];
-    AFHTTPRequestOperation *operation = [[ZuzuAPIClient sharedClient] HTTPRequestOperationWithRequest:mutableURLRequest success:^(AFHTTPRequestOperation *operation, id JSON) {
-        Post *post = [[Post alloc] initWithAttributes:[JSON valueForKeyPath:@"post"]];
-        
+    NSDictionary *parameters = @{ @"post": @{
+                                          @"lat": @(location.coordinate.latitude),
+                                          @"lng": @(location.coordinate.longitude),
+                                          @"content": content
+                                          }
+                                  };
+    [[ZuzuAPIClient sharedClient] postPath:@"/posts" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        Post *post = [[Post alloc] initWithDictionary:responseObject];
         if (block) {
             block(post, nil);
         }
-    }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (block) {
             block(nil, error);
         }
     }];
-    [[ZuzuAPIClient sharedClient] enqueueHTTPRequestOperation:operation];
 }
+//    NSMutableDictionary *mutableParameters = [NSMutableDictionary dictionary];
+//    [mutableParameters setObject:[NSNumber numberWithDouble:location.coordinate.latitude] forKey:@"lat"];
+//    [mutableParameters setObject:[NSNumber numberWithDouble:location.coordinate.longitude] forKey:@"lng"];
+//    
+//    NSMutableURLRequest *mutableURLRequest = [[ZuzuAPIClient sharedClient] multipartFormRequestWithMethod:@"POST" path:@"/posts" parameters:mutableParameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+//    }];
+//    AFHTTPRequestOperation *operation = [[ZuzuAPIClient sharedClient] HTTPRequestOperationWithRequest:mutableURLRequest success:^(AFHTTPRequestOperation *operation, id JSON) {
+//        Post *post = [[Post alloc] initWithAttributes:[JSON valueForKeyPath:@"post"]];
+//        
+//        if (block) {
+//            block(post, nil);
+//        }
+//    }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        if (block) {
+//            block(nil, error);
+//        }
+//    }];
+//    [[ZuzuAPIClient sharedClient] enqueueHTTPRequestOperation:operation];
+//}
 
 
 + (void)postsNearLocation:(CLLocation *)location
                     block:(void (^)(NSArray *posts, NSError *error))block {
-    NSMutableDictionary *mutableParameters = [NSMutableDictionary dictionary];
-    [mutableParameters setObject:[NSNumber numberWithDouble:location.coordinate.latitude] forKey:@"lat"];
-    [mutableParameters setObject:[NSNumber numberWithDouble:location.coordinate.longitude] forKey:@"lng"];
+    NSDictionary *parameters = @{
+                                 @"lat": @(location.coordinate.latitude),
+                                 @"lng": @(location.coordinate.longitude)
+                                 };
     
-    [[ZuzuAPIClient sharedClient] getPath:@"/posts" parameters:mutableParameters success:^(AFHTTPRequestOperation *operation, id JSON) {
+    [[ZuzuAPIClient sharedClient] getPath:@"/posts" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSMutableArray *mutablePosts = [NSMutableArray array];
-        for (NSDictionary *attributes in [JSON valueForKey:@"posts"]) {
-            Post *post = [[Post alloc] initWithAttributes:attributes];
+        for (NSDictionary *dictionary in [responseObject valueForKey:@"posts"]) {
+            Post *post = [[Post alloc] initWithDictionary:dictionary];
             [mutablePosts addObject:post];
         }
         
-        if (block ) {
-            block([NSArray arrayWithArray:mutablePosts], nil);
+        if (block) {
+            block(mutablePosts, nil);
         }
-    }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+        
         if (block) {
             block(nil, error);
         }
     }];
+//    NSMutableDictionary *mutableParameters = [NSMutableDictionary dictionary];
+//    [mutableParameters setObject:[NSNumber numberWithDouble:location.coordinate.latitude] forKey:@"lat"];
+//    [mutableParameters setObject:[NSNumber numberWithDouble:location.coordinate.longitude] forKey:@"lng"];
+//    
+//    [[ZuzuAPIClient sharedClient] getPath:@"/posts" parameters:mutableParameters success:^(AFHTTPRequestOperation *operation, id JSON) {
+//        NSMutableArray *mutablePosts = [NSMutableArray array];
+//        for (NSDictionary *attributes in [JSON valueForKey:@"posts"]) {
+//            Post *post = [[Post alloc] initWithAttributes:attributes];
+//            [mutablePosts addObject:post];
+//        }
+//        
+//        if (block ) {
+//            block([NSArray arrayWithArray:mutablePosts], nil);
+//        }
+//    }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        if (block) {
+//            block(nil, error);
+//        }
+//    }];
 }
 
-#pragma mark - MKAnnotation
 
-- (NSString *)content {
-    return NSStringFromCoordinate(self.coordinate);
-}
-- (NSString *)subtitle {
-    return NSStringFromDate(self.timestamp);
-}
-
-- (CLLocationCoordinate2D)coordinate {
-    return CLLocationCoordinate2DMake(self.latitude, self.longitude);
-}
 
 @end

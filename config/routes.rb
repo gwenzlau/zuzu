@@ -1,7 +1,16 @@
 Zuzu::Application.routes.draw do
+  get "pages/home"
+
+  get "users/show"
+
   resources :posts
 
 
+  devise_for :users
+  match 'users/:id' => 'users#show', as: :user
+
+  
+  root :to => 'pages#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

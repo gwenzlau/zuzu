@@ -11,17 +11,17 @@
 
 static CLLocationDistance const kMapRegionSpanDistance = 5000;
 
-@interface IndexViewController () <NSFetchedResultsControllerDelegate>
-@property (strong, nonatomic, readwrite) CLLocationManager *locationManager;
-@property (nonatomic, strong) NSMutableArray *posts;
+@interface IndexViewController () <NSFetchedResultsControllerDelegate, CLLocationManagerDelegate>
+@property (strong) CLLocationManager *locationManager;
+@property (strong) NSMutableArray *posts;
 @property (strong, nonatomic, readwrite) UIActivityIndicatorView *activityIndicatorView;
 @property (nonatomic, strong) SSPullToRefreshView *pullToRefreshView;
 @end
 
 @implementation IndexViewController
-@synthesize posts = _posts;
-@synthesize tableView = _tableView;
-@synthesize locationManager = _locationManager;
+//@synthesize posts = _posts;
+//@synthesize tableView = _tableView;
+//@synthesize locationManager = _locationManager;
 @synthesize activityIndicatorView = _activityIndicatorView;
 @synthesize pullToRefreshView;
 
@@ -33,15 +33,15 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(takePhoto:)];
     
-    NSURL *url = [NSURL URLWithString:@"sleepy-mountain-9630.herokuapp.com/posts.json"];
-    [AFJSONRequestOperation JSONRequestOperationWithRequest:[NSURLRequest requestWithURL:url] success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        for (NSDictionary *attributes in [JSON valueForKeyPath:@"posts"]) {
-            Post *post = [[Post alloc] initWithAttributes:attributes];
-            [self.tableView insertRowsAtIndexPaths:post withRowAnimation:YES];
-        }
-    }failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        NSLog(@"Error: %@", error);
-    }];
+//    NSURL *url = [NSURL URLWithString:@"sleepy-mountain-9630.herokuapp.com/posts.json"];
+//    [AFJSONRequestOperation JSONRequestOperationWithRequest:[NSURLRequest requestWithURL:url] success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+//        for (NSDictionary *dictionary in [JSON valueForKeyPath:@"posts"]) {
+//            Post *post = [[Post alloc] initWithDictionary:dictionary];
+//            [self.tableView insertRowsAtIndexPaths:post withRowAnimation:YES];
+//        }
+//    }failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+//        NSLog(@"Error: %@", error);
+//    }];
     
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
@@ -52,6 +52,24 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
     self.pullToRefreshView = [[SSPullToRefreshView alloc] initWithScrollView:self.tableView delegate:self];
     //[self refresh];
     
+}
+- (void)viewDidUnload {[super viewDidUnload];}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.locationManager startUpdatingLocation];
+}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+	[super viewDidDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -95,32 +113,60 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
 - (void)pullToRefreshViewDidStartLoading:(SSPullToRefreshView *)view {
     [self refresh];
 }
+#pragma mark - CLLocationManagerDelegate
 
-- (void)locationManager: (CLLocationManager *)manager
-    didUpdateToLocation:(CLLocation *)newLocation
-           fromLocation:(CLLocation *)oldLocation
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray *)locations
 {
-    [self.activityIndicatorView startAnimating];
-    [Post postsNearLocation:newLocation block:^(NSArray *posts, NSError *error) {
-        [self.activityIndicatorView stopAnimating];
-        if (posts) {
-            NSLog(@"Recieved %d posts", posts.count);
-            self.posts = [NSMutableArray arrayWithArray:posts];
+    CLLocation *location = [locations firstObjectCommonWithArray:_posts];
+    if (location) {
+        [Post savePostAtLocation:location withContent:@"Hello!" block:^(Post *post, NSError *error) {
+            NSLog(@"Block: %@", post);
+        }];
+        
+        [Post postsNearLocation:location
+                          block:^(NSArray *posts, NSError *error) {
+            self.posts = posts;
             [self.tableView reloadData];
-            [self.tableView setNeedsLayout];
-            [self.tableView insertRowsAtIndexPaths:posts withRowAnimation:YES];
-            
-        } else {
-          [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Nearby Posts Failed", nil)
-                                      message:[error localizedFailureReason]
-                                     delegate:nil
-                            cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                            otherButtonTitles:nil, nil] show];
-        }
-    }];
-
-    
+            NSLog(@"Recieved %d posts", posts.count);
+        }];
+        
+        [manager stopUpdatingLocation];
+    } else {
+//         [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Nearby Posts Failed", nil)
+//                    message:[error localizedFailureReason]
+//                    delegate:nil
+//                    cancelButtonTitle:NSLocalizedString(@"OK", nil)
+//                    otherButtonTitles:nil, nil] show];
+        NSLog(@"Couldn't Find Location, Nearby posts failed.");
+    }
 }
+
+//- (void)locationManager: (CLLocationManager *)manager
+//    didUpdateToLocation:(CLLocation *)newLocation
+//           fromLocation:(CLLocation *)oldLocation
+//{
+//    [self.activityIndicatorView startAnimating];
+//    [Post postsNearLocation:newLocation block:^(NSArray *posts, NSError *error) {
+//        [self.activityIndicatorView stopAnimating];
+//        if (posts) {
+//            NSLog(@"Recieved %d posts", posts.count);
+//            self.posts = [NSMutableArray arrayWithArray:posts];
+//            [self.tableView reloadData];
+//            [self.tableView setNeedsLayout];
+//            [self.tableView insertRowsAtIndexPaths:posts withRowAnimation:YES];
+//            
+//        } else {
+//          [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Nearby Posts Failed", nil)
+//                                      message:[error localizedFailureReason]
+//                                     delegate:nil
+//                            cancelButtonTitle:NSLocalizedString(@"OK", nil)
+//                            otherButtonTitles:nil, nil] show];
+//        }
+//    }];
+//
+//    
+//}
 
 - (void)addPost:(id)sender {
     UIStoryboard *addPostStoryBoard = [UIStoryboard storyboardWithName:@"AddPostStoryboard"
@@ -146,7 +192,35 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
 - (void)pullToRefreshViewDidFinishLoading:(SSPullToRefreshView *)view {
 }
 
-#pragma mark - Table view delegate
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.posts count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    [self configureCell:cell forRowAtIndexPath:indexPath];
+    
+    return cell;
+}
+
+- (void)configureCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    Post *post = [self.posts objectAtIndex:indexPath.row];
+    
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.textLabel.text = post.content;
+}
+
+
+#pragma mark - TableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -158,5 +232,11 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Post *post = [self.posts objectAtIndex:indexPath.row];
+    return MAX([post.content sizeWithFont:[UIFont systemFontOfSize:16.0f] constrainedToSize:CGSizeMake(280.0f, CGFLOAT_MAX)].height, tableView.rowHeight);
+}
+
 
 @end
