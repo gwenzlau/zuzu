@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
                     :storage => :s3,
                     :s3_credentials => S3_CREDENTIALS
 
-  validates :image,  :presence => true || :content, :presence => true
+  #validates :image,  :presence => true || :content, :presence => true
 
    validates :lat, :lng,
             :presence => true,
