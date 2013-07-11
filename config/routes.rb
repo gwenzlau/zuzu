@@ -10,8 +10,7 @@ Zuzu::Application.routes.draw do
 
   devise_for :users
   match 'users/:id' => 'users#show', as: :user
-  devise_for :users, :controllers => {:registrations => "registrations"}
-
+  
 
   
   root :to => 'pages#index'
