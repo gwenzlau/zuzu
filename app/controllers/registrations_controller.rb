@@ -1,4 +1,4 @@
-class registrationsController < Devise::registrationsController
+class RegistrationsController < Devise::registrationsController
 	respond_to :json, :html
   # def new
   #   super
@@ -13,5 +13,4 @@ def create
     end
 
   end
-end
 end
