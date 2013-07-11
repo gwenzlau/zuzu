@@ -9,31 +9,48 @@
 #import "AppDelegate.h"
 #import "IndexViewController.h"
 #import "AFNetworkActivityIndicatorManager.h"
+#import "LoginViewController.h"
 
 @implementation AppDelegate
 
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize managedObjectModel = _managedObjectModel;
-@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize window = _window;
+@synthesize viewController = _viewController;
 
-- (BOOL)application:(UIApplication *)application
-didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:8 * 1024 * 1024 diskCapacity:20 * 1024 * 1024 diskPath:nil];
-    [NSURLCache setSharedURLCache:URLCache];
-    
-    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
-    
-    IndexViewController *viewController = [[IndexViewController alloc] initWithNibName:nil bundle:nil];
-    viewController.managedObjectContext = self.managedObjectContext;
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
-   
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = self.navigationController;
-    [self.window makeKeyAndVisible];
+    // Override point for customization after application launch.
+    self.viewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    
+    self.window.rootViewController = navigationController;
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
+
+//@synthesize managedObjectContext = _managedObjectContext;
+//@synthesize managedObjectModel = _managedObjectModel;
+//@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+//
+//- (BOOL)application:(UIApplication *)application
+//didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+//{
+//    NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:8 * 1024 * 1024 diskCapacity:20 * 1024 * 1024 diskPath:nil];
+//    [NSURLCache setSharedURLCache:URLCache];
+//    
+//    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+//    
+//    IndexViewController *viewController = [[IndexViewController alloc] initWithNibName:nil bundle:nil];
+//    viewController.managedObjectContext = self.managedObjectContext;
+//    self.navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+//   
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.window.rootViewController = self.navigationController;
+//    [self.window makeKeyAndVisible];
+//    
+//    return YES;
+//}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -60,71 +77,71 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Saves changes in the application's managed object context before the application terminates.
-    [self saveContext];
+//    [self saveContext];
 }
 
-#pragma mark - Core Data
-
-- (void)saveContext {
-    NSError *error = nil;
-    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
-    if (managedObjectContext) {
-        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
-    }
-}
-
-- (NSManagedObjectContext *)managedObjectContext {
-    if (_managedObjectContext) {
-        return _managedObjectContext;
-    }
-    
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-    if (coordinator) {
-        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-        [_managedObjectContext setPersistentStoreCoordinator:coordinator];
-    }
-    
-    return _managedObjectContext;
-}
-
-- (NSManagedObjectModel *)managedObjectModel {
-    if (_managedObjectModel) {
-        return _managedObjectModel;
-    }
-    
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Zuzu" withExtension:@"momd"];
-    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-    
-    return _managedObjectModel;
-}
-
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
-    if (_persistentStoreCoordinator) {
-        return _persistentStoreCoordinator;
-    }
-    
-    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    
-    AFIncrementalStore *incrementalStore = (AFIncrementalStore *)[_persistentStoreCoordinator addPersistentStoreWithType:[ZuzuIncrementalStore type] configuration:nil URL:nil options:nil error:nil];
-    
-    NSURL *applicationDocumentsDirectory = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-    NSURL *storeURL = [applicationDocumentsDirectory URLByAppendingPathComponent:@"Zuzu.sqlite"];
-    
-    NSDictionary *options = @{
-        NSInferMappingModelAutomaticallyOption : @(YES),
-        NSMigratePersistentStoresAutomaticallyOption: @(YES)
-    };
-    
-    NSError *error = nil;
-    if (![incrementalStore.backingPersistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-    
-    return _persistentStoreCoordinator;
-}
+//#pragma mark - Core Data
+//
+//- (void)saveContext {
+//    NSError *error = nil;
+//    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+//    if (managedObjectContext) {
+//        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
+//            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+//            abort();
+//        }
+//    }
+//}
+//
+//- (NSManagedObjectContext *)managedObjectContext {
+//    if (_managedObjectContext) {
+//        return _managedObjectContext;
+//    }
+//    
+//    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+//    if (coordinator) {
+//        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+//        [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+//    }
+//    
+//    return _managedObjectContext;
+//}
+//
+//- (NSManagedObjectModel *)managedObjectModel {
+//    if (_managedObjectModel) {
+//        return _managedObjectModel;
+//    }
+//    
+//    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Zuzu" withExtension:@"momd"];
+//    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+//    
+//    return _managedObjectModel;
+//}
+//
+//- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
+//    if (_persistentStoreCoordinator) {
+//        return _persistentStoreCoordinator;
+//    }
+//    
+//    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+//    
+//    AFIncrementalStore *incrementalStore = (AFIncrementalStore *)[_persistentStoreCoordinator addPersistentStoreWithType:[ZuzuIncrementalStore type] configuration:nil URL:nil options:nil error:nil];
+//    
+//    NSURL *applicationDocumentsDirectory = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+//    NSURL *storeURL = [applicationDocumentsDirectory URLByAppendingPathComponent:@"Zuzu.sqlite"];
+//    
+//    NSDictionary *options = @{
+//        NSInferMappingModelAutomaticallyOption : @(YES),
+//        NSMigratePersistentStoresAutomaticallyOption: @(YES)
+//    };
+//    
+//    NSError *error = nil;
+//    if (![incrementalStore.backingPersistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
+//        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+//        abort();
+//    }
+//    
+//    return _persistentStoreCoordinator;
+//}
 
 @end

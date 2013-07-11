@@ -11,4 +11,13 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_many :posts
+
+  def as_json(options = nil)
+    {
+      :email => self.email,
+
+      :password => self.password,
+      :signature => self.signature,
+    }
+  end
 end

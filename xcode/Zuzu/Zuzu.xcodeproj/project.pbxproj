@@ -11,6 +11,8 @@
 		A436C7F2178CB13000B0A008 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A436C7F1178CB13000B0A008 /* Default.png */; };
 		A436C7F4178CB1C600B0A008 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A436C7F3178CB1C600B0A008 /* Default@2x.png */; };
 		A436C7F6178CB1E600B0A008 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A436C7F5178CB1E600B0A008 /* Default-568h@2x.png */; };
+		A436C7FE178E1D8600B0A008 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A436C7FC178E1D8500B0A008 /* LoginViewController.m */; };
+		A436C7FF178E1D8600B0A008 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A436C7FD178E1D8500B0A008 /* LoginViewController.xib */; };
 		A45634CD178320F60086821A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45634CC178320F60086821A /* UIKit.framework */; };
 		A45634CF178320F60086821A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45634CE178320F60086821A /* Foundation.framework */; };
 		A45634D1178320F60086821A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45634D0178320F60086821A /* CoreGraphics.framework */; };
@@ -38,6 +40,9 @@
 		A436C7F1178CB13000B0A008 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		A436C7F3178CB1C600B0A008 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		A436C7F5178CB1E600B0A008 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		A436C7FB178E1D8500B0A008 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		A436C7FC178E1D8500B0A008 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		A436C7FD178E1D8500B0A008 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		A45634C9178320F60086821A /* Zuzu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zuzu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45634CC178320F60086821A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A45634CE178320F60086821A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -86,6 +91,9 @@
 		A436C7F7178CB66100B0A008 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A45634E6178320F60086821A /* Default.png */,
+				A45634E8178320F60086821A /* Default@2x.png */,
+				A45634EA178320F60086821A /* Default-568h@2x.png */,
 				A436C7F5178CB1E600B0A008 /* Default-568h@2x.png */,
 				A436C7F3178CB1C600B0A008 /* Default@2x.png */,
 				A436C7F1178CB13000B0A008 /* Default.png */,
@@ -154,9 +162,6 @@
 				A45634DD178320F60086821A /* Zuzu-Info.plist */,
 				A45634DE178320F60086821A /* InfoPlist.strings */,
 				A45634E1178320F60086821A /* main.m */,
-				A45634E6178320F60086821A /* Default.png */,
-				A45634E8178320F60086821A /* Default@2x.png */,
-				A45634EA178320F60086821A /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			path = Zuzu;
@@ -190,6 +195,9 @@
 				A456354E17835B920086821A /* AddPostViewController.h */,
 				A456354F17835B920086821A /* AddPostViewController.m */,
 				A456355117835BE30086821A /* AddPostStoryboard.storyboard */,
+				A436C7FB178E1D8500B0A008 /* LoginViewController.h */,
+				A436C7FC178E1D8500B0A008 /* LoginViewController.m */,
+				A436C7FD178E1D8500B0A008 /* LoginViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -256,6 +264,7 @@
 				A436C7F2178CB13000B0A008 /* Default.png in Resources */,
 				A436C7F4178CB1C600B0A008 /* Default@2x.png in Resources */,
 				A436C7F6178CB1E600B0A008 /* Default-568h@2x.png in Resources */,
+				A436C7FF178E1D8600B0A008 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +313,7 @@
 				A45634FF17833EB60086821A /* IndexViewController.m in Sources */,
 				A456354D178359750086821A /* Post.m in Sources */,
 				A456355017835B920086821A /* AddPostViewController.m in Sources */,
+				A436C7FE178E1D8600B0A008 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
