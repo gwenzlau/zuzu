@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0460"
+   LastUpgradeVersion = "0500"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7080D9BE34394D16B058E0F0"
+               BlueprintIdentifier = "1C0747AF7DBA4D1581587EF9"
                BuildableName = "libPods-AFIncrementalStore.a"
                BlueprintName = "Pods-AFIncrementalStore"
                ReferencedContainer = "container:Pods.xcodeproj">

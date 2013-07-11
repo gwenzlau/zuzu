@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     @posts = Post.nearby(lat.to_f, lng.to_f)
     respond_with({:posts => @posts}.as_json)
 else
-	respond_with({:message => "Invalid or missing lat/lng params"}, :status => 406)
+	respond_with({:message => "Invalid or missing lat/lng params"}, :status => 400)
 	end
   end
 

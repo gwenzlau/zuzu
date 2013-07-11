@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ynV-y5-gdh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4471.1" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ynV-y5-gdh">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3697.3"/>
     </dependencies>
     <scenes>
         <!--Add Post View Controller-->
         <scene sceneID="AbO-jA-pgU">
             <objects>
-                <tableViewController storyboardIdentifier="" id="ynV-y5-gdh" customClass="AddPostViewController" sceneMemberID="viewController">
+                <tableViewController id="ynV-y5-gdh" customClass="AddPostViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Kl4-Ig-Ch6">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="dkF-Jy-Z8x">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="196" id="VoS-Ye-QgS">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="196"/>
+                                        <rect key="frame" x="0.0" y="64" width="320" height="196"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="195"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VoS-Ye-QgS" id="WC6-d5-YKQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="322" height="195"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="bezel" placeholder="Leave Your Mark..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fG0-PH-9mt">
+                                                    <rect key="frame" x="12" y="20" width="295" height="155"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="155" id="pAy-eQ-GfZ"/>
                                                     </constraints>
@@ -30,12 +32,11 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </tableViewCellContentView>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="fG0-PH-9mt" secondAttribute="trailing" constant="20" type="default" id="JNz-Ob-pVg"/>
-                                            <constraint firstItem="fG0-PH-9mt" firstAttribute="top" secondItem="VoS-Ye-QgS" secondAttribute="top" constant="20" type="default" id="s4y-IC-YRy"/>
-                                            <constraint firstItem="fG0-PH-9mt" firstAttribute="leading" secondItem="VoS-Ye-QgS" secondAttribute="leading" constant="20" type="default" id="xRj-Yw-4AY"/>
+                                            <constraint firstItem="fG0-PH-9mt" firstAttribute="top" secondItem="VoS-Ye-QgS" secondAttribute="top" constant="20" id="6iO-hf-SsF"/>
+                                            <constraint firstAttribute="trailing" secondItem="fG0-PH-9mt" secondAttribute="trailing" constant="20" id="HTu-2T-yE0"/>
+                                            <constraint firstItem="fG0-PH-9mt" firstAttribute="leading" secondItem="VoS-Ye-QgS" secondAttribute="leading" constant="20" id="Rkw-Eg-siY"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -56,17 +57,6 @@
             <point key="canvasLocation" x="149" y="-187"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AddPostViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddPostViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="postTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

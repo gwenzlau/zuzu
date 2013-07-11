@@ -60,8 +60,8 @@ static NSString * const kZuzuAPIBaseURLString = @"http://sleepy-mountain-9630.he
     
     if (![accessToken isEqualToString:@""]) {
         self.isAuthenticated = YES;
-        [[NSUserDefaults standardUserDefaults] setObject:accessToken forKey:@"kaccessToken"];
-        [[NSUserDefaults standardUserDefaults] setObject:refreshToken forKey:@"krefreshToken"];
+        [[NSUserDefaults standardUserDefaults] setObject:accessToken forKey:@"oaccessToken"];
+        [[NSUserDefaults standardUserDefaults] setObject:refreshToken forKey:@"orefreshToken"];
         [self setAuthorizationHeaderWithToken:accessToken];
     }
 }
@@ -77,8 +77,8 @@ static NSString * const kZuzuAPIBaseURLString = @"http://sleepy-mountain-9630.he
 	[self setDefaultHeader:@"Accept" value:@"application/json"];
     self.parameterEncoding = AFJSONParameterEncoding;
     
-    NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"kaccessToken"];
-    NSString *refreshToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"krefreshToken"];
+    NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"oaccessToken"];
+    NSString *refreshToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"orefreshToken"];
     
     [self setAuthorizationWithToken:accessToken refreshToken:refreshToken];
     

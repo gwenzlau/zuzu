@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CB1BDFDE-2B7A-41BF-9C3C-C9E87828EC9C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Zuzu</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>AA38DA4C-CAF2-467C-93C6-6F9B32E2EBE0</key>
+		<string>ssh://github.com/gwenzlau/zuzu.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>xcode/Zuzu/Zuzu.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>AA38DA4C-CAF2-467C-93C6-6F9B32E2EBE0</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/gwenzlau/zuzu.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>AA38DA4C-CAF2-467C-93C6-6F9B32E2EBE0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AA38DA4C-CAF2-467C-93C6-6F9B32E2EBE0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>zuzu</string>
+		</dict>
+	</array>
+</dict>
+</plist>

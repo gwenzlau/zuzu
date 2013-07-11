@@ -13,6 +13,7 @@
 		A436C7F6178CB1E600B0A008 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A436C7F5178CB1E600B0A008 /* Default-568h@2x.png */; };
 		A436C7FE178E1D8600B0A008 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A436C7FC178E1D8500B0A008 /* LoginViewController.m */; };
 		A436C7FF178E1D8600B0A008 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A436C7FD178E1D8500B0A008 /* LoginViewController.xib */; };
+		A436C813178F560500B0A008 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A436C812178F560500B0A008 /* MobileCoreServices.framework */; };
 		A45634CD178320F60086821A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45634CC178320F60086821A /* UIKit.framework */; };
 		A45634CF178320F60086821A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45634CE178320F60086821A /* Foundation.framework */; };
 		A45634D1178320F60086821A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45634D0178320F60086821A /* CoreGraphics.framework */; };
@@ -30,6 +31,7 @@
 		A456354D178359750086821A /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = A456354C178359750086821A /* Post.m */; };
 		A456355017835B920086821A /* AddPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A456354F17835B920086821A /* AddPostViewController.m */; };
 		A456355217835BE30086821A /* AddPostStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A456355117835BE30086821A /* AddPostStoryboard.storyboard */; };
+		A47C56C1178F62F5006309AE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A47C56C0178F62F5006309AE /* SystemConfiguration.framework */; };
 		DCD87A6D163B4E9CAEC84F97 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4633A5FCB82A49ABBFF4B73D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,7 @@
 		A436C7FB178E1D8500B0A008 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		A436C7FC178E1D8500B0A008 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		A436C7FD178E1D8500B0A008 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		A436C812178F560500B0A008 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		A45634C9178320F60086821A /* Zuzu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zuzu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45634CC178320F60086821A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A45634CE178320F60086821A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -69,6 +72,10 @@
 		A456354E17835B920086821A /* AddPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPostViewController.h; sourceTree = "<group>"; };
 		A456354F17835B920086821A /* AddPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPostViewController.m; sourceTree = "<group>"; };
 		A456355117835BE30086821A /* AddPostStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddPostStoryboard.storyboard; sourceTree = "<group>"; };
+		A47C56C0178F62F5006309AE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A47C56C2178F6511006309AE /* AddPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddPhotoViewController.h; sourceTree = "<group>"; };
+		A47C56C3178F6511006309AE /* AddPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddPhotoViewController.m; sourceTree = "<group>"; };
+		A47C56C4178F6511006309AE /* AddPhotoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPhotoViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A47C56C1178F62F5006309AE /* SystemConfiguration.framework in Frameworks */,
+				A436C813178F560500B0A008 /* MobileCoreServices.framework in Frameworks */,
 				A436C7F01785C94300B0A008 /* MapKit.framework in Frameworks */,
 				A45634F917832A530086821A /* CoreLocation.framework in Frameworks */,
 				A45634CD178320F60086821A /* UIKit.framework in Frameworks */,
@@ -130,6 +139,8 @@
 		A45634CB178320F60086821A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A47C56C0178F62F5006309AE /* SystemConfiguration.framework */,
+				A436C812178F560500B0A008 /* MobileCoreServices.framework */,
 				A436C7EF1785C94200B0A008 /* MapKit.framework */,
 				A45634F817832A530086821A /* CoreLocation.framework */,
 				A45634CC178320F60086821A /* UIKit.framework */,
@@ -195,6 +206,9 @@
 				A456354E17835B920086821A /* AddPostViewController.h */,
 				A456354F17835B920086821A /* AddPostViewController.m */,
 				A456355117835BE30086821A /* AddPostStoryboard.storyboard */,
+				A47C56C2178F6511006309AE /* AddPhotoViewController.h */,
+				A47C56C3178F6511006309AE /* AddPhotoViewController.m */,
+				A47C56C4178F6511006309AE /* AddPhotoViewController.xib */,
 				A436C7FB178E1D8500B0A008 /* LoginViewController.h */,
 				A436C7FC178E1D8500B0A008 /* LoginViewController.m */,
 				A436C7FD178E1D8500B0A008 /* LoginViewController.xib */,
@@ -391,6 +405,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9562666BAB0E496E8FE2F1EB /* Pods.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Pods\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Zuzu/Zuzu-Prefix.pch";
 				INFOPLIST_FILE = "Zuzu/Zuzu-Info.plist";
@@ -403,6 +421,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9562666BAB0E496E8FE2F1EB /* Pods.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Pods\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Zuzu/Zuzu-Prefix.pch";
 				INFOPLIST_FILE = "Zuzu/Zuzu-Info.plist";

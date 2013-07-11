@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0460"
+   LastUpgradeVersion = "0500"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C7FEAD8F9C2B45309715DF56"
+               BlueprintIdentifier = "88197DBD352B4A03B7D445DF"
                BuildableName = "libPods-TransformerKit.a"
                BlueprintName = "Pods-TransformerKit"
                ReferencedContainer = "container:Pods.xcodeproj">

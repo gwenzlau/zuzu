@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130710212528) do
+ActiveRecord::Schema.define(:version => 20130711224416) do
 
   create_table "opro_auth_grants", :force => true do |t|
     t.string   "code"
@@ -44,10 +44,14 @@ ActiveRecord::Schema.define(:version => 20130710212528) do
 
   create_table "posts", :force => true do |t|
     t.string   "content"
-    t.decimal  "lat",        :precision => 15, :scale => 10
-    t.decimal  "lng",        :precision => 15, :scale => 10
-    t.datetime "created_at",                                 :null => false
-    t.datetime "updated_at",                                 :null => false
+    t.decimal  "lat",                :precision => 15, :scale => 10
+    t.decimal  "lng",                :precision => 15, :scale => 10
+    t.datetime "created_at",                                         :null => false
+    t.datetime "updated_at",                                         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "posts", ["created_at"], :name => "index_posts_on_created_at"

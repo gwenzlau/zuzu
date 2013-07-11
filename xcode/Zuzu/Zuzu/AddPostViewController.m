@@ -73,7 +73,7 @@ static NSString * NSStringFromCoordinate(CLLocationCoordinate2D coordinate) {
         }];
         AFHTTPRequestOperation *operation = [[ZuzuAPIClient sharedClient] HTTPRequestOperationWithRequest:mutableURLRequest success:^(AFHTTPRequestOperation *operation, id JSON) {
             Post *post = [[Post alloc] initWithDictionary:[JSON valueForKeyPath:@"post"]];
-            if (post, nil) {
+            if (post) {
                 [self.navigationController popViewControllerAnimated:YES];
                 NSLog(@"Success!");
             }

@@ -18,7 +18,9 @@
     
     //textFields
     IBOutlet UITextField *userSignatureField;
+   // IBOutlet UITextField *userEmailField;
     IBOutlet UITextField *userPasswordField;
+   // IBOutlet UITextField *userPasswordConfirmField;
 }
 - (IBAction)logUserIn:(id)sender;
 

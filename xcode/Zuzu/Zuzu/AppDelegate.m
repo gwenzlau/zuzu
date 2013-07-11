@@ -14,43 +14,43 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize viewController = _viewController;
+//@synthesize viewController = _viewController;
 
--(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.viewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-    
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
-    
-    self.window.rootViewController = navigationController;
-    
-    [self.window makeKeyAndVisible];
-    return YES;
-}
-
-//@synthesize managedObjectContext = _managedObjectContext;
-//@synthesize managedObjectModel = _managedObjectModel;
-//@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
-//
-//- (BOOL)application:(UIApplication *)application
-//didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-//{
-//    NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:8 * 1024 * 1024 diskCapacity:20 * 1024 * 1024 diskPath:nil];
-//    [NSURLCache setSharedURLCache:URLCache];
-//    
-//    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
-//    
-//    IndexViewController *viewController = [[IndexViewController alloc] initWithNibName:nil bundle:nil];
-//    viewController.managedObjectContext = self.managedObjectContext;
-//    self.navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
-//   
+//-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 //    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    self.window.rootViewController = self.navigationController;
-//    [self.window makeKeyAndVisible];
+//    // Override point for customization after application launch.
+//    self.viewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
 //    
+//    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+//    
+//    self.window.rootViewController = navigationController;
+//    
+//    [self.window makeKeyAndVisible];
 //    return YES;
 //}
+
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize managedObjectModel = _managedObjectModel;
+@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+
+- (BOOL)application:(UIApplication *)application
+didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:8 * 1024 * 1024 diskCapacity:20 * 1024 * 1024 diskPath:nil];
+    [NSURLCache setSharedURLCache:URLCache];
+    
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+    
+    IndexViewController *viewController = [[IndexViewController alloc] initWithNibName:nil bundle:nil];
+    viewController.managedObjectContext = self.managedObjectContext;
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+   
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = self.navigationController;
+    [self.window makeKeyAndVisible];
+    
+    return YES;
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

@@ -4,7 +4,7 @@
 #import "AFHTTPClient.h"
 #import "AFOAuth2Client.h"
 
-@interface ZuzuAPIClient : AFHTTPClient <AFIncrementalStoreHTTPClient>
+@interface ZuzuAPIClient : AFHTTPClient 
 
 @property (nonatomic, assign) BOOL isAuthenticated;
 
