@@ -7,23 +7,20 @@
 #import "IndexViewController.h"
 #import "Post.h"
 #import "AFJSONRequestOperation.h"
-#import "SSPullToRefresh.h"
 
 static CLLocationDistance const kMapRegionSpanDistance = 5000;
 
-@interface IndexViewController () <NSFetchedResultsControllerDelegate, CLLocationManagerDelegate>
+@interface IndexViewController () <CLLocationManagerDelegate>
 @property (strong) CLLocationManager *locationManager;
 @property (strong) NSMutableArray *posts;
-@property (strong, nonatomic, readwrite) UIActivityIndicatorView *activityIndicatorView;
-@property (nonatomic, strong) SSPullToRefreshView *pullToRefreshView;
+//@property (strong, nonatomic, readwrite) UIActivityIndicatorView *activityIndicatorView;
 @end
 
 @implementation IndexViewController
 //@synthesize posts = _posts;
 //@synthesize tableView = _tableView;
 //@synthesize locationManager = _locationManager;
-@synthesize activityIndicatorView = _activityIndicatorView;
-@synthesize pullToRefreshView;
+//@synthesize activityIndicatorView = _activityIndicatorView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,9 +45,6 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
     self.locationManager.distanceFilter = 80.0f;
     [self.locationManager startUpdatingLocation];
-    
-    self.pullToRefreshView = [[SSPullToRefreshView alloc] initWithScrollView:self.tableView delegate:self];
-    //[self refresh];
     
 }
 - (void)viewDidUnload {[super viewDidUnload];}
@@ -83,42 +77,13 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
                                                          target:self
                                                          action:@selector(addPost:)];
 }
--(void)refresh {
-    [self.pullToRefreshView startLoading];
-    [self locationManager];
-    double delayInSeconds = 2.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-        dispatch_queue_t backgroundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-        dispatch_after(popTime, backgroundQueue, ^(void){
-            [_posts removeAllObjects];
-            for (int i = 0; i < 25; i++) {
-                [self insertNewPost:nil];
-            }
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.pullToRefreshView finishLoading];
-                [self.tableView reloadData];
-        });
-    });
-}
 
-- (void)insertNewPost:(id)sender {
-    if (!_posts) {
-        _posts = [[NSMutableArray alloc] init];
-    }
-    [_posts insertObject:[NSDictionary dictionary] atIndex:0];
-}
-
-
-- (void)pullToRefreshViewDidStartLoading:(SSPullToRefreshView *)view {
-    [self refresh];
-}
 #pragma mark - CLLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray *)locations
 {
-    CLLocation *location = [locations firstObjectCommonWithArray:_posts];
+    CLLocation *location = [locations firstObject];
     if (location) {
         [Post savePostAtLocation:location withContent:@"Hello!" block:^(Post *post, NSError *error) {
             NSLog(@"Block: %@", post);
@@ -175,22 +140,23 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)postCreated:(NSNotification *)notification {
-    [self.posts insertObject:notification.object atIndex:0];
-}
+//
+//- (void)postCreated:(NSNotification *)notification {
+//    [self.posts insertObject:notification.object atIndex:0];
+//}
 
--(void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
+//-(void)dealloc {
+//    [[NSNotificationCenter defaultCenter] removeObserver:self];
+//}
 
 #pragma mark - Pull to refresh
 
-- (BOOL)pullToRefreshViewShouldStartLoading:(SSPullToRefreshView *)view {
-    return YES;
-}
-
-- (void)pullToRefreshViewDidFinishLoading:(SSPullToRefreshView *)view {
-}
+//- (BOOL)pullToRefreshViewShouldStartLoading:(SSPullToRefreshView *)view {
+//    return YES;
+//}
+//
+//- (void)pullToRefreshViewDidFinishLoading:(SSPullToRefreshView *)view {
+//}
 
 #pragma mark - UITableViewDataSource
 

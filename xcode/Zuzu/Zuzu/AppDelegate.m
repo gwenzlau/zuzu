@@ -42,7 +42,6 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     
     IndexViewController *viewController = [[IndexViewController alloc] initWithNibName:nil bundle:nil];
-    viewController.managedObjectContext = self.managedObjectContext;
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

@@ -24,7 +24,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="bezel" placeholder="Leave Your Mark..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fG0-PH-9mt">
-                                                    <rect key="frame" x="12" y="20" width="295" height="155"/>
+                                                    <rect key="frame" x="10" y="53" width="292" height="90"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="155" id="pAy-eQ-GfZ"/>
                                                     </constraints>

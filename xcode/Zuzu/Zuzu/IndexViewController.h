@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-#import "SSPullToRefresh.h"
 
-@interface IndexViewController : UITableViewController <UITableViewDelegate, CLLocationManagerDelegate, SSPullToRefreshViewDelegate> {
-@private
-    CLLocationManager *_locationManager;
-    UIActivityIndicatorView *_activityIndicatorView;
-}
-@property NSManagedObjectContext *managedObjectContext;
+@interface IndexViewController : UITableViewController <UITableViewDelegate, CLLocationManagerDelegate>
+//{
+//@private
+//    CLLocationManager *_locationManager;
+//    UIActivityIndicatorView *_activityIndicatorView;
+//}
+//@property NSManagedObjectContext *managedObjectContext;
 
 @end

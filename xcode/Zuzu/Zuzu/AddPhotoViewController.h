@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddPhotoViewController : UITableViewController
+@interface AddPhotoViewController : UITableViewController <UIImagePickerControllerDelegate>
 
 @end

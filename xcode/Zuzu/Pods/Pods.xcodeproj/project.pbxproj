@@ -16,9 +16,7 @@
 		1066D8ABE9764F9AAB859B10 /* Pods-AFOAuth2Client-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBB582B5C7F4DB5BAA048D7 /* Pods-AFOAuth2Client-dummy.m */; };
 		16158167A5214FE2ACD2AE25 /* TTTImageTransformers.m in Sources */ = {isa = PBXBuildFile; fileRef = 169B2C722CEC4A8FA0D2C580 /* TTTImageTransformers.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
 		187A607F4B1B48028971D69A /* AFPropertyListRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E1B2297E9B944F0E9EE47A32 /* AFPropertyListRequestOperation.h */; };
-		19060EA60A96499785DA343A /* SSPullToRefreshSimpleContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1580DA0258A47E98C085C4C /* SSPullToRefreshSimpleContentView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
 		1F68E3AC873143C49653A75C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05167EFA0DAC4DC7BCB8E03C /* Foundation.framework */; };
-		22E078AA3CBB4003A1D47C65 /* SSPullToRefreshSimpleContentView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C111B9B471747988A2332B9 /* SSPullToRefreshSimpleContentView.h */; };
 		2471B4BBB5904218A10DBF9C /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A86A37765EEF46B8AAB65FC6 /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
 		26123E01D40C49FFA68F7A8D /* NSString+InflectorKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DA5EE3BEBC4BAB9216E414 /* NSString+InflectorKit.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
 		2762BA4D3BCD4E9AAA107720 /* libPods-AFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D24205B0E8DD41A59440F685 /* libPods-AFNetworking.a */; };
@@ -34,15 +32,12 @@
 		64ACA758A1D04A009371DF31 /* TTTDateTransformers.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA1620875C649339475C127 /* TTTDateTransformers.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
 		68D4AF6F2EFB45FB85281C61 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05167EFA0DAC4DC7BCB8E03C /* Foundation.framework */; };
 		6B5CF1BB78704F8E8461718B /* NSValueTransformer+TransformerKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B4EF32FC290542DB8B70ABC0 /* NSValueTransformer+TransformerKit.h */; };
-		6CB8F498F0994A57BE41F791 /* SSPullToRefreshDefaultContentView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9698A1C39DC945D0A48EBA18 /* SSPullToRefreshDefaultContentView.h */; };
 		709C1886D2374063AC9BBF31 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D86581BB0485291449337 /* AFNetworkActivityIndicatorManager.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		779FE4A9EE8A4FAB8D6BB0D3 /* SSPullToRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = FD736585A4FA419CBEE975BB /* SSPullToRefresh.h */; };
 		7F3806124F904AC9BA5C6CA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05167EFA0DAC4DC7BCB8E03C /* Foundation.framework */; };
 		88ED7D29670444FC8054B5A4 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A2A99F1AEA4521B22F8DFB /* AFPropertyListRequestOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
 		8A466E198AFE436C8F650997 /* AFImageRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BE6EBAD02114A1086149802 /* AFImageRequestOperation.h */; };
 		8B651CFF5AC8409A9F9B76E4 /* Pods-InflectorKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A44676DB424CBEB5FA307A /* Pods-InflectorKit-dummy.m */; };
 		8DE0A8BD569F47008D74E393 /* AFHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E7D8EB0B97B4408C99A97F45 /* AFHTTPClient.h */; };
-		916736541839464F8172F68A /* SSPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4764DEA8CEBA4C7D80EC1F7C /* SSPullToRefreshView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
 		944967AF1DA54B0FAA826E36 /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D1ED1E97BBF643E29B41446C /* AFNetworkActivityIndicatorManager.h */; };
 		97EAB59B784949C3AA9F5670 /* TTTStringInflector.h in Headers */ = {isa = PBXBuildFile; fileRef = 575515C341634457B0A3A936 /* TTTStringInflector.h */; };
 		9899379947D34A009AB349F6 /* TTTStringTransformers.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AA1AFC92B76468C8E2C49A7 /* TTTStringTransformers.h */; };
@@ -58,7 +53,6 @@
 		C2B2F449A3B0487EA4DC275C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05167EFA0DAC4DC7BCB8E03C /* Foundation.framework */; };
 		C374648314A640BC879BB197 /* AFIncrementalStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 55583649CF1648F2AAC21E31 /* AFIncrementalStore.h */; };
 		C5BF7749227F4AD9A0D35B44 /* Pods-AFIncrementalStore-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC804D739FB44FABE4CD8B3 /* Pods-AFIncrementalStore-dummy.m */; };
-		C5F19F9FC104466D96585051 /* SSPullToRefreshDefaultContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCE06BCD1904600B4C70C47 /* SSPullToRefreshDefaultContentView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
 		C9EAB5EBB5C746B5ADA8971F /* libPods-SSPullToRefresh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8004D2E7360E444F92BEA6A2 /* libPods-SSPullToRefresh.a */; };
 		CC6DC77665084E36856B6D20 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAEB68861F24AE1A0A7E04A /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
 		D09C7789199449D39E891623 /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FA621048C6A48E2A1CFC9FF /* AFHTTPRequestOperation.h */; };
@@ -68,7 +62,6 @@
 		F0107D2E721C4A4BA283CBD6 /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 37999A0F189545D4B00D8F24 /* ISO8601DateFormatter.m */; };
 		F2DECAC8AB8C4D8B92859BD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05167EFA0DAC4DC7BCB8E03C /* Foundation.framework */; };
 		F3DDF82EECAE4426AD6B1C9A /* AFOAuth2Client.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8522277E5D44A2AD5E568F /* AFOAuth2Client.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		F478426A46F248959CA2271F /* SSPullToRefreshView.h in Headers */ = {isa = PBXBuildFile; fileRef = EB327F598D044FA5B164C972 /* SSPullToRefreshView.h */; };
 		F64FBAE3B76E4FC291E3CD2C /* AFIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7117E1955F0941C6ADC3033F /* AFIncrementalStore.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
 		F65B2FCF73824BC78803E920 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05167EFA0DAC4DC7BCB8E03C /* Foundation.framework */; };
 		F6C94C086ED44F7FA918B6E0 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D5C9BE3ABD647CCA9B8A5A9 /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
@@ -105,7 +98,6 @@
 		3EB8EA9E6360447F90128193 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = SOURCE_ROOT; };
 		455695EB7BEF4219AF101086 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4647D9DBACEC46BD8C8D0206 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFXMLRequestOperation.h; path = AFNetworking/AFNetworking/AFXMLRequestOperation.h; sourceTree = SOURCE_ROOT; };
-		4764DEA8CEBA4C7D80EC1F7C /* SSPullToRefreshView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SSPullToRefreshView.m; path = SSPullToRefresh/SSPullToRefresh/SSPullToRefreshView.m; sourceTree = SOURCE_ROOT; };
 		49BA6BF12536415A8D991C02 /* TTTStringInflector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TTTStringInflector.m; path = InflectorKit/InflectorKit/TTTStringInflector.m; sourceTree = SOURCE_ROOT; };
 		4DEACD9A6F8E4D59AF77AA01 /* Pods-SSPullToRefresh.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SSPullToRefresh.xcconfig"; sourceTree = SOURCE_ROOT; };
 		52736AADFE7B49A8864318BE /* Pods-AFNetworking-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AFNetworking-Private.xcconfig"; sourceTree = SOURCE_ROOT; };
@@ -123,7 +115,6 @@
 		7117E1955F0941C6ADC3033F /* AFIncrementalStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFIncrementalStore.m; path = AFIncrementalStore/AFIncrementalStore/AFIncrementalStore.m; sourceTree = SOURCE_ROOT; };
 		7359DB916DC447BE89C1B34C /* ISO8601DateFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ISO8601DateFormatter.h; path = ISO8601DateFormatter/ISO8601DateFormatter.h; sourceTree = SOURCE_ROOT; };
 		789D81286A644C2B9452B9F7 /* libPods-InflectorKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InflectorKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7C111B9B471747988A2332B9 /* SSPullToRefreshSimpleContentView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SSPullToRefreshSimpleContentView.h; path = SSPullToRefresh/SSPullToRefresh/SSPullToRefreshSimpleContentView.h; sourceTree = SOURCE_ROOT; };
 		7CF76D949F5F4B69B7EAD8D4 /* Pods-SSPullToRefresh-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SSPullToRefresh-Private.xcconfig"; sourceTree = SOURCE_ROOT; };
 		7D5C9BE3ABD647CCA9B8A5A9 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLConnectionOperation.m; path = AFNetworking/AFNetworking/AFURLConnectionOperation.m; sourceTree = SOURCE_ROOT; };
 		7ED1643EB65D48C880D6F108 /* libPods-ISO8601DateFormatter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ISO8601DateFormatter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,16 +123,13 @@
 		8C85313CF9934B8FB1133D9C /* libPods-AFIncrementalStore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AFIncrementalStore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE0447F670F4AAAB07CCFBE /* Pods-SSPullToRefresh-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SSPullToRefresh-dummy.m"; sourceTree = SOURCE_ROOT; };
 		95EAB6B000F844EF8B592646 /* TransformerKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TransformerKit.h; path = TransformerKit/TransformerKit/TransformerKit.h; sourceTree = SOURCE_ROOT; };
-		9698A1C39DC945D0A48EBA18 /* SSPullToRefreshDefaultContentView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SSPullToRefreshDefaultContentView.h; path = SSPullToRefresh/SSPullToRefresh/SSPullToRefreshDefaultContentView.h; sourceTree = SOURCE_ROOT; };
 		9CC9C55680614B0696924B6E /* Pods-TransformerKit-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TransformerKit-Private.xcconfig"; sourceTree = SOURCE_ROOT; };
 		9F6ADC4EF44D4B76A3DA651D /* Pods-AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AFNetworking.xcconfig"; sourceTree = SOURCE_ROOT; };
 		A04899473A664D3CAA376253 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = AFNetworking/AFNetworking/AFHTTPRequestOperation.m; sourceTree = SOURCE_ROOT; };
-		A1580DA0258A47E98C085C4C /* SSPullToRefreshSimpleContentView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SSPullToRefreshSimpleContentView.m; path = SSPullToRefresh/SSPullToRefresh/SSPullToRefreshSimpleContentView.m; sourceTree = SOURCE_ROOT; };
 		A86A37765EEF46B8AAB65FC6 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "AFNetworking/AFNetworking/UIImageView+AFNetworking.m"; sourceTree = SOURCE_ROOT; };
 		A8C49492F69345308CFD7585 /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFJSONRequestOperation.m; path = AFNetworking/AFNetworking/AFJSONRequestOperation.m; sourceTree = SOURCE_ROOT; };
 		A95BB1A69328495396D7FBCA /* Pods-AFOAuth2Client.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AFOAuth2Client.xcconfig"; sourceTree = SOURCE_ROOT; };
 		A9F9AA904A7F48FBB6F50D08 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = AFNetworking/AFNetworking/AFURLConnectionOperation.h; sourceTree = SOURCE_ROOT; };
-		ABCE06BCD1904600B4C70C47 /* SSPullToRefreshDefaultContentView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SSPullToRefreshDefaultContentView.m; path = SSPullToRefresh/SSPullToRefresh/SSPullToRefreshDefaultContentView.m; sourceTree = SOURCE_ROOT; };
 		AC094EF234034934AE23BA42 /* AFRESTClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFRESTClient.m; path = AFIncrementalStore/AFIncrementalStore/AFRESTClient.m; sourceTree = SOURCE_ROOT; };
 		ACD217F7252445FC9B164A75 /* Pods-TransformerKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TransformerKit.xcconfig"; sourceTree = SOURCE_ROOT; };
 		ADD22937874149648C820B7D /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
@@ -165,12 +153,10 @@
 		E7D8EB0B97B4408C99A97F45 /* AFHTTPClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPClient.h; path = AFNetworking/AFNetworking/AFHTTPClient.h; sourceTree = SOURCE_ROOT; };
 		EA119105923140A88FE6F239 /* Pods-InflectorKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-InflectorKit-prefix.pch"; sourceTree = SOURCE_ROOT; };
 		EAA28DA2DFEC4E5E84E3605C /* Pods-ISO8601DateFormatter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ISO8601DateFormatter-dummy.m"; sourceTree = SOURCE_ROOT; };
-		EB327F598D044FA5B164C972 /* SSPullToRefreshView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SSPullToRefreshView.h; path = SSPullToRefresh/SSPullToRefresh/SSPullToRefreshView.h; sourceTree = SOURCE_ROOT; };
 		F048E178949C4FD4AFF89BE6 /* Pods-AFIncrementalStore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AFIncrementalStore.xcconfig"; sourceTree = SOURCE_ROOT; };
 		F18F35D582FE4A0883213268 /* Pods-InflectorKit-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-InflectorKit-Private.xcconfig"; sourceTree = SOURCE_ROOT; };
 		F1F95BC48F3C496EBA68E5DB /* AFOAuth2Client.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFOAuth2Client.h; path = AFOAuth2Client/AFOAuth2Client/AFOAuth2Client.h; sourceTree = SOURCE_ROOT; };
 		F9A206B2D99F43D1B651CB8A /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking/AFNetworking.h; sourceTree = SOURCE_ROOT; };
-		FD736585A4FA419CBEE975BB /* SSPullToRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SSPullToRefresh.h; path = SSPullToRefresh/SSPullToRefresh/SSPullToRefresh.h; sourceTree = SOURCE_ROOT; };
 		FDA1620875C649339475C127 /* TTTDateTransformers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TTTDateTransformers.m; path = TransformerKit/TransformerKit/TTTDateTransformers.m; sourceTree = SOURCE_ROOT; };
 		FFDD10FD039444D89E8E50E6 /* AFRESTClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFRESTClient.h; path = AFIncrementalStore/AFIncrementalStore/AFRESTClient.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -367,7 +353,6 @@
 				B75A88E5F32B48F7B0501F7F /* AFOAuth2Client */,
 				2A407A30C2CF4F64904732E6 /* ISO8601DateFormatter */,
 				DAE5C55E9A43404D88E854E3 /* InflectorKit */,
-				E7211940DFD14D36AB3FD068 /* SSPullToRefresh */,
 				6B63E6C74F1C4C0CAC2255FF /* TransformerKit */,
 			);
 			name = Pods;
@@ -476,20 +461,6 @@
 			name = "Pods-ISO8601DateFormatter";
 			sourceTree = "<group>";
 		};
-		E7211940DFD14D36AB3FD068 /* SSPullToRefresh */ = {
-			isa = PBXGroup;
-			children = (
-				FD736585A4FA419CBEE975BB /* SSPullToRefresh.h */,
-				9698A1C39DC945D0A48EBA18 /* SSPullToRefreshDefaultContentView.h */,
-				ABCE06BCD1904600B4C70C47 /* SSPullToRefreshDefaultContentView.m */,
-				7C111B9B471747988A2332B9 /* SSPullToRefreshSimpleContentView.h */,
-				A1580DA0258A47E98C085C4C /* SSPullToRefreshSimpleContentView.m */,
-				EB327F598D044FA5B164C972 /* SSPullToRefreshView.h */,
-				4764DEA8CEBA4C7D80EC1F7C /* SSPullToRefreshView.m */,
-			);
-			name = SSPullToRefresh;
-			sourceTree = "<group>";
-		};
 		F712883BDFA44C0A9657186F /* Pods-AFIncrementalStore */ = {
 			isa = PBXGroup;
 			children = (
@@ -520,10 +491,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				779FE4A9EE8A4FAB8D6BB0D3 /* SSPullToRefresh.h in Headers */,
-				6CB8F498F0994A57BE41F791 /* SSPullToRefreshDefaultContentView.h in Headers */,
-				22E078AA3CBB4003A1D47C65 /* SSPullToRefreshSimpleContentView.h in Headers */,
-				F478426A46F248959CA2271F /* SSPullToRefreshView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,9 +738,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5F19F9FC104466D96585051 /* SSPullToRefreshDefaultContentView.m in Sources */,
-				19060EA60A96499785DA343A /* SSPullToRefreshSimpleContentView.m in Sources */,
-				916736541839464F8172F68A /* SSPullToRefreshView.m in Sources */,
 				98B90FAAA4B04019BC4FBC1D /* Pods-SSPullToRefresh-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

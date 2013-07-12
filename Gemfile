@@ -9,6 +9,7 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 2.3.1.0'
 gem 'simple_form'
 gem 'opro'
+gem 'newrelic_rpm'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
