@@ -91,6 +91,9 @@ GEM
       mime-types
     pg (0.15.1)
     polyglot (0.3.3)
+    rabl-rails (0.3.3)
+      activesupport (~> 3.0)
+      railties (~> 3.0)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -162,6 +165,7 @@ DEPENDENCIES
   opro
   paperclip (~> 3.0)
   pg
+  rabl-rails
   rack-timeout
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)

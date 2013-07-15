@@ -72,7 +72,7 @@ static NSString * NSStringFromCoordinate(CLLocationCoordinate2D coordinate) {
         NSMutableURLRequest *mutableURLRequest = [[ZuzuAPIClient sharedClient] multipartFormRequestWithMethod:@"POST" path:@"/posts" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         }];
         AFHTTPRequestOperation *operation = [[ZuzuAPIClient sharedClient] HTTPRequestOperationWithRequest:mutableURLRequest success:^(AFHTTPRequestOperation *operation, id JSON) {
-            Post *post = [[Post alloc] initWithDictionary:[JSON valueForKeyPath:@"post"]];
+            Post *post = [[Post alloc] initWithDictionary:[JSON valueForKeyPath:@"post[post]"]];
             if (post) {
                 [self.navigationController popViewControllerAnimated:YES];
                 NSLog(@"Success!");
@@ -85,6 +85,7 @@ static NSString * NSStringFromCoordinate(CLLocationCoordinate2D coordinate) {
         }];
         [[ZuzuAPIClient sharedClient] enqueueHTTPRequestOperation:operation];
     }
+
 
 
 -(UIBarButtonItem *)onCancel {

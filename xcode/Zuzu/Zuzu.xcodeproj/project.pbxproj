@@ -31,7 +31,12 @@
 		A456354D178359750086821A /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = A456354C178359750086821A /* Post.m */; };
 		A456355017835B920086821A /* AddPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A456354F17835B920086821A /* AddPostViewController.m */; };
 		A456355217835BE30086821A /* AddPostStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A456355117835BE30086821A /* AddPostStoryboard.storyboard */; };
+		A479CCC41790BEA5005F4A97 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A479CCC21790BEA5005F4A97 /* RegisterViewController.m */; };
+		A479CCC51790BEA5005F4A97 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A479CCC31790BEA5005F4A97 /* RegisterViewController.xib */; };
 		A47C56C1178F62F5006309AE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A47C56C0178F62F5006309AE /* SystemConfiguration.framework */; };
+		A47C56C6179074B3006309AE /* NewRelicAgent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A47C56C5179074B3006309AE /* NewRelicAgent.framework */; };
+		A47C56C8179074D5006309AE /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A47C56C7179074D5006309AE /* CoreTelephony.framework */; };
+		A47C56CA179074E3006309AE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A47C56C9179074E3006309AE /* libz.dylib */; };
 		DCD87A6D163B4E9CAEC84F97 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4633A5FCB82A49ABBFF4B73D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -72,10 +77,16 @@
 		A456354E17835B920086821A /* AddPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPostViewController.h; sourceTree = "<group>"; };
 		A456354F17835B920086821A /* AddPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPostViewController.m; sourceTree = "<group>"; };
 		A456355117835BE30086821A /* AddPostStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddPostStoryboard.storyboard; sourceTree = "<group>"; };
+		A479CCC11790BEA5005F4A97 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		A479CCC21790BEA5005F4A97 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		A479CCC31790BEA5005F4A97 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		A47C56C0178F62F5006309AE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A47C56C2178F6511006309AE /* AddPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddPhotoViewController.h; sourceTree = "<group>"; };
 		A47C56C3178F6511006309AE /* AddPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddPhotoViewController.m; sourceTree = "<group>"; };
 		A47C56C4178F6511006309AE /* AddPhotoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPhotoViewController.xib; sourceTree = "<group>"; };
+		A47C56C5179074B3006309AE /* NewRelicAgent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NewRelicAgent.framework; sourceTree = "<group>"; };
+		A47C56C7179074D5006309AE /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		A47C56C9179074E3006309AE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +94,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A47C56CA179074E3006309AE /* libz.dylib in Frameworks */,
+				A47C56C8179074D5006309AE /* CoreTelephony.framework in Frameworks */,
 				A47C56C1178F62F5006309AE /* SystemConfiguration.framework in Frameworks */,
+				A47C56C6179074B3006309AE /* NewRelicAgent.framework in Frameworks */,
 				A436C813178F560500B0A008 /* MobileCoreServices.framework in Frameworks */,
 				A436C7F01785C94300B0A008 /* MapKit.framework in Frameworks */,
 				A45634F917832A530086821A /* CoreLocation.framework in Frameworks */,
@@ -139,6 +153,9 @@
 		A45634CB178320F60086821A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A47C56C9179074E3006309AE /* libz.dylib */,
+				A47C56C7179074D5006309AE /* CoreTelephony.framework */,
+				A47C56C5179074B3006309AE /* NewRelicAgent.framework */,
 				A47C56C0178F62F5006309AE /* SystemConfiguration.framework */,
 				A436C812178F560500B0A008 /* MobileCoreServices.framework */,
 				A436C7EF1785C94200B0A008 /* MapKit.framework */,
@@ -209,11 +226,22 @@
 				A47C56C2178F6511006309AE /* AddPhotoViewController.h */,
 				A47C56C3178F6511006309AE /* AddPhotoViewController.m */,
 				A47C56C4178F6511006309AE /* AddPhotoViewController.xib */,
-				A436C7FB178E1D8500B0A008 /* LoginViewController.h */,
-				A436C7FC178E1D8500B0A008 /* LoginViewController.m */,
-				A436C7FD178E1D8500B0A008 /* LoginViewController.xib */,
+				A479CCC61790BEBE005F4A97 /* signup/in */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A479CCC61790BEBE005F4A97 /* signup/in */ = {
+			isa = PBXGroup;
+			children = (
+				A479CCC11790BEA5005F4A97 /* RegisterViewController.h */,
+				A479CCC21790BEA5005F4A97 /* RegisterViewController.m */,
+				A479CCC31790BEA5005F4A97 /* RegisterViewController.xib */,
+				A436C7FD178E1D8500B0A008 /* LoginViewController.xib */,
+				A436C7FB178E1D8500B0A008 /* LoginViewController.h */,
+				A436C7FC178E1D8500B0A008 /* LoginViewController.m */,
+			);
+			name = signup/in;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +297,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A479CCC51790BEA5005F4A97 /* RegisterViewController.xib in Resources */,
 				A45634D6178320F60086821A /* Podfile in Resources */,
 				A45634E0178320F60086821A /* InfoPlist.strings in Resources */,
 				A45634E7178320F60086821A /* Default.png in Resources */,
@@ -324,6 +353,7 @@
 				A45634E2178320F60086821A /* main.m in Sources */,
 				A45634E5178320F60086821A /* AppDelegate.m in Sources */,
 				A45634F2178320F60086821A /* ZuzuIncrementalStore.m in Sources */,
+				A479CCC41790BEA5005F4A97 /* RegisterViewController.m in Sources */,
 				A45634FF17833EB60086821A /* IndexViewController.m in Sources */,
 				A456354D178359750086821A /* Post.m in Sources */,
 				A456355017835B920086821A /* AddPostViewController.m in Sources */,
@@ -407,7 +437,8 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Pods\"",
+					"\\\"$(SRCROOT)/Pods\\\"",
+					"$(SRCROOT)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Zuzu/Zuzu-Prefix.pch";
@@ -423,7 +454,8 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Pods\"",
+					"\\\"$(SRCROOT)/Pods\\\"",
+					"$(SRCROOT)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Zuzu/Zuzu-Prefix.pch";

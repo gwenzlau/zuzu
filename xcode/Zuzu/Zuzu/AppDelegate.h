@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ZuzuIncrementalStore.h"
+#import <NewRelicAgent/NewRelicAgent.h>
 
 @class LoginViewController;
 
