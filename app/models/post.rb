@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
 	COORDINATE_DELTA = 0.05
  # attr_accessible :content, :lat, :lng
 
-  validates :content, length: { maximum: 140 }
+ # validates :content, length: { maximum: 140 }
 
   has_attached_file :image,
                     :styles => { :thumbnail => "100x100#" },
@@ -11,9 +11,9 @@ class Post < ActiveRecord::Base
 
   #validates :image,  :presence => true || :content, :presence => true
 
-   validates :lat, :lng,
-            :presence => true,
-            :numericality => true
+   #validates :lat, :lng,
+   #         :presence => true,
+   #         :numericality => true
             # :signature, presence: true
 
 
