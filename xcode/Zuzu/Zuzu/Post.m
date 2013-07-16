@@ -11,6 +11,7 @@
 #import "ZuzuAPIClient.h"
 #import "AFNetworking.h"
 #import "ISO8601DateFormatter.h"
+#import "NSDictionary+NonNull.h"
 
 static NSDate * NSDateFromISO8601String(NSString *string) {
     static ISO8601DateFormatter *_iso8601DateFormatter = nil;
@@ -44,32 +45,26 @@ static NSString * NSStringFromDate(NSDate *date) {
     return [_dateFormatter stringFromDate:date];
 }
 
-@interface Post ()
-@property (strong, nonatomic, readwrite) NSDate *timestamp;
-//@property (assign, nonatomic, readwrite) CLLocationDegrees latitude;
-//@property (assign, nonatomic, readwrite) CLLocationDegrees longitude;
-@end
+//@interface Post ()
+//@property (strong, nonatomic, readwrite) NSDate *timestamp;
+////@property (assign, nonatomic, readwrite) CLLocationDegrees latitude;
+////@property (assign, nonatomic, readwrite) CLLocationDegrees longitude;
+//@end
 
 @implementation Post
-@synthesize content = _content;
-@synthesize timestamp = _timestamp;
-@dynamic location;
 
 -(id)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     if (!self) {
         return nil;
     }
-    self.content = [dictionary valueForKeyPath:@"content"];
-    self.timestamp = NSDateFromISO8601String([dictionary valueForKeyPath:@"createdAt"]);
-    self.location = [[CLLocation alloc] initWithLatitude:[[dictionary valueForKey:@"lat"] doubleValue] longitude:[[dictionary valueForKey:@"lng"] doubleValue]];
+    
+    self.content = [dictionary valueForKey:@"content"];
+    self.location = [[CLLocation alloc] initWithLatitude:[[dictionary nonNullValueForKeyPath:@"lat"] doubleValue] longitude:[[dictionary nonNullValueForKeyPath:@"lng"] doubleValue]];
     
     return self;
 }
 
-//- (CLLocation *)location {
-//    return [[CLLocation alloc] initWithLatitude:self.latitude longitude:self.longitude];
-//}
 + (void)savePostAtLocation:(CLLocation *)location
                      withContent:(NSString *)content
                      block:(void (^)(Post *, NSError *))block

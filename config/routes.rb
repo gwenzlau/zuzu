@@ -9,10 +9,11 @@ Zuzu::Application.routes.draw do
 
 
   devise_for :users
-  #match 'users/:id' => 'users#show', as: :user
-  devise_for :users, :controllers => {:registrations => "devise/registrations"}
-  match 'users' => 'users#index' 
+  match 'users/:id' => 'users#show', as: :user
 
+  #devise_for :users, :controllers => {:registrations => "devise/registrations"}
+  
+  match 'posts/:id' => 'posts#index', as: :post
   
   root :to => 'pages#index'
   # The priority is based upon order of creation:

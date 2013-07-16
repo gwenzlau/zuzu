@@ -10,6 +10,7 @@
 #import "IndexViewController.h"
 #import "AFNetworkActivityIndicatorManager.h"
 #import "LoginViewController.h"
+//#import <Parse/Parse.h>
 
 @implementation AppDelegate
 
@@ -29,13 +30,14 @@
 //    return YES;
 //}
 
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize managedObjectModel = _managedObjectModel;
-@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
-
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+//    [Parse setApplicationId:@"mcgSnyhWQ6BrEIMq0y3i0qTxOGXXSVj8qxPGqd38"
+//                  clientKey:@"uGwSkux2IaHiyFfKlXOcQ8UxG5P9z7zeF99DadUs"];
+//    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+
+    
     [NewRelicAgent startWithApplicationToken:@"AA06600ac7bfaeba1c9655dba84f7c82a2d945d2de"];
     
     NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:8 * 1024 * 1024 diskCapacity:20 * 1024 * 1024 diskPath:nil];

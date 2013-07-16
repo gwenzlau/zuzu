@@ -8,6 +8,8 @@
 
 #import "AddPhotoViewController.h"
 #import "Post.h"
+#import "ZuzuAPIClient.h"
+#import "AFJSONRequestOperation.h"
 
 @interface AddPhotoViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -49,8 +51,60 @@
 -(UIBarButtonItem *)saveButton {
     return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(savePostAtLocation:withContent:block:)];
 }
+- (void)savePostAtLocation:(CLLocation *)location
+               withContent:(NSString *)content
+                     block:(void (^)(Post *, NSError *))block
+{
+    NSDictionary *parameters = @{ @"post": @{
+                                          @"lat": @(location.coordinate.latitude),
+                                          @"lng": @(location.coordinate.longitude),
+                                          @"content": content
+                                          }
+                                  };
+    [[ZuzuAPIClient sharedClient] postPath:@"/posts" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        Post *post = [[Post alloc] initWithDictionary:responseObject];
+        if (block) {
+            block(post, nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (block) {
+            block(nil, error);
+        }
+    }];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    if ([cell.reuseIdentifier isEqualToString:@"photoCell"]) {
+        [self promptForPhoto];
+    }
+}
+
+- (void)promptForPhoto {
+    UIImagePickerController *pickerController = [[UIImagePickerController alloc] init];
+    pickerController.sourceType =
+    UIImagePickerControllerSourceTypePhotoLibrary |
+    UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        pickerController.sourceType |=UIImagePickerControllerSourceTypeCamera;
+    }
+    
+    pickerController.delegate = self;
+    pickerController.allowsEditing = YES;
+    
+    [self presentViewController:pickerController
+                       animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+    self.imageView.image = image;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 -(UIBarButtonItem *)onCancel {
-    return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismiss:)];
+    return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismiss)];
 }
 - (void)dismiss {
     [self dismissViewControllerAnimated:YES completion:nil];

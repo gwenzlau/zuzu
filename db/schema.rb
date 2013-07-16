@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130711224416) do
+ActiveRecord::Schema.define(:version => 20130716231627) do
 
   create_table "opro_auth_grants", :force => true do |t|
     t.string   "code"
@@ -52,9 +52,11 @@ ActiveRecord::Schema.define(:version => 20130711224416) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "user_id"
   end
 
   add_index "posts", ["created_at"], :name => "index_posts_on_created_at"
+  add_index "posts", ["user_id"], :name => "index_posts_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

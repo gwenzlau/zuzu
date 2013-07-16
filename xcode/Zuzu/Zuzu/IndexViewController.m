@@ -87,7 +87,7 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray *)locations
 {
-    CLLocation *location = [locations firstObject];
+    CLLocation *location = [locations firstObjectCommonWithArray:locations];
     if (location) {
         [Post savePostAtLocation:location withContent:@"Hello!" block:^(Post *post, NSError *error) {
             NSLog(@"Block: %@", post);

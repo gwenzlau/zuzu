@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
 	COORDINATE_DELTA = 0.05
- # attr_accessible :content, :lat, :lng
+  attr_accessible :content, :lat, :lng, :image
 
  # validates :content, length: { maximum: 140 }
 
@@ -37,5 +37,9 @@ class Post < ActiveRecord::Base
       },
       :created_at => self.created_at.iso8601
     }
+  end
+  def image_remote_url=(url_value)
+    self.image = URI.parse(url_value) unless url_value.blank?
+    super
   end
 end

@@ -70,10 +70,8 @@ static NSString * NSStringFromCoordinate(CLLocationCoordinate2D coordinate) {
                                           @"content": content
                                           }
                                   };
-    NSMutableURLRequest *mutableURLRequest = [[ZuzuAPIClient sharedClient] requestWithMethod:@"POST" path:@"/posts" parameters:parameters];
-    AFHTTPRequestOperation *operation = [[ZuzuAPIClient sharedClient] HTTPRequestOperationWithRequest:mutableURLRequest
-                                                                            success:^(AFHTTPRequestOperation *operation, id JSON) {
-        Post *post = [[Post alloc] initWithDictionary:[JSON valueForKeyPath:@"post"]];
+    [[ZuzuAPIClient sharedClient] postPath:@"/posts" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        Post *post = [[Post alloc] initWithDictionary:responseObject];
         if (block) {
             block(post, nil);
         }

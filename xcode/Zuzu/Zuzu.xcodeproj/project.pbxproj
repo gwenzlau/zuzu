@@ -22,7 +22,6 @@
 		A45634E7178320F60086821A /* Default-b.png in Resources */ = {isa = PBXBuildFile; fileRef = A45634E6178320F60086821A /* Default-b.png */; };
 		A45634E9178320F60086821A /* Default@2x-b.png in Resources */ = {isa = PBXBuildFile; fileRef = A45634E8178320F60086821A /* Default@2x-b.png */; };
 		A45634EB178320F60086821A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A45634EA178320F60086821A /* Default-568h@2x.png */; };
-		A45634F2178320F60086821A /* ZuzuIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = A45634F1178320F60086821A /* ZuzuIncrementalStore.m */; };
 		A45634F917832A530086821A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45634F817832A530086821A /* CoreLocation.framework */; };
 		A45634FF17833EB60086821A /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45634FE17833EB60086821A /* IndexViewController.m */; };
 		A456354D178359750086821A /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = A456354C178359750086821A /* Post.m */; };
@@ -34,10 +33,16 @@
 		A479CCCB1794835A005F4A97 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A479CCCA1794835A005F4A97 /* Default@2x.png */; };
 		A479CCCE1794B48C005F4A97 /* AddPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A479CCCD1794B48C005F4A97 /* AddPhotoViewController.m */; };
 		A479CCD01794B4A2005F4A97 /* AddPhotoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A479CCCF1794B4A2005F4A97 /* AddPhotoStoryboard.storyboard */; };
+		A479CCD41794FECD005F4A97 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A479CCD31794FECD005F4A97 /* AudioToolbox.framework */; };
+		A479CCD61794FED6005F4A97 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A479CCD51794FED6005F4A97 /* CFNetwork.framework */; };
+		A479CCD81794FEE5005F4A97 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A479CCD71794FEE5005F4A97 /* libz.1.1.3.dylib */; };
+		A479CCDA1794FEED005F4A97 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A479CCD91794FEED005F4A97 /* QuartzCore.framework */; };
+		A479CCDC1794FEFD005F4A97 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A479CCDB1794FEFD005F4A97 /* Security.framework */; };
 		A47C56C1178F62F5006309AE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A47C56C0178F62F5006309AE /* SystemConfiguration.framework */; };
 		A47C56C6179074B3006309AE /* NewRelicAgent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A47C56C5179074B3006309AE /* NewRelicAgent.framework */; };
 		A47C56C8179074D5006309AE /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A47C56C7179074D5006309AE /* CoreTelephony.framework */; };
 		A47C56CA179074E3006309AE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A47C56C9179074E3006309AE /* libz.dylib */; };
+		A4F6BD7D1795BC360033A0EA /* NSDictionary+NonNull.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F6BD7C1795BC360033A0EA /* NSDictionary+NonNull.m */; };
 		DCD87A6D163B4E9CAEC84F97 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4633A5FCB82A49ABBFF4B73D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +58,7 @@
 		A45634CC178320F60086821A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A45634CE178320F60086821A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A45634D0178320F60086821A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		A45634D5178320F60086821A /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
+		A45634D5178320F60086821A /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A45634D8178320F60086821A /* Zuzu-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Zuzu-Prefix.pch"; sourceTree = "<group>"; };
 		A45634DA178320F60086821A /* ZuzuAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZuzuAPIClient.h; path = Classes/ZuzuAPIClient.h; sourceTree = "<group>"; };
 		A45634DB178320F60086821A /* ZuzuAPIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZuzuAPIClient.m; path = Classes/ZuzuAPIClient.m; sourceTree = "<group>"; };
@@ -65,8 +70,6 @@
 		A45634E6178320F60086821A /* Default-b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-b.png"; sourceTree = "<group>"; };
 		A45634E8178320F60086821A /* Default@2x-b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x-b.png"; sourceTree = "<group>"; };
 		A45634EA178320F60086821A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		A45634F0178320F60086821A /* ZuzuIncrementalStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZuzuIncrementalStore.h; path = Classes/ZuzuIncrementalStore.h; sourceTree = "<group>"; };
-		A45634F1178320F60086821A /* ZuzuIncrementalStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZuzuIncrementalStore.m; path = Classes/ZuzuIncrementalStore.m; sourceTree = "<group>"; };
 		A45634F817832A530086821A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A45634FD17833EB60086821A /* IndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexViewController.h; sourceTree = "<group>"; };
 		A45634FE17833EB60086821A /* IndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexViewController.m; sourceTree = "<group>"; };
@@ -84,10 +87,17 @@
 		A479CCCC1794B48C005F4A97 /* AddPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPhotoViewController.h; sourceTree = "<group>"; };
 		A479CCCD1794B48C005F4A97 /* AddPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPhotoViewController.m; sourceTree = "<group>"; };
 		A479CCCF1794B4A2005F4A97 /* AddPhotoStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddPhotoStoryboard.storyboard; sourceTree = "<group>"; };
+		A479CCD31794FECD005F4A97 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A479CCD51794FED6005F4A97 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		A479CCD71794FEE5005F4A97 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		A479CCD91794FEED005F4A97 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A479CCDB1794FEFD005F4A97 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		A47C56C0178F62F5006309AE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A47C56C5179074B3006309AE /* NewRelicAgent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NewRelicAgent.framework; sourceTree = "<group>"; };
 		A47C56C7179074D5006309AE /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		A47C56C9179074E3006309AE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		A4F6BD7B1795BC360033A0EA /* NSDictionary+NonNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NonNull.h"; sourceTree = "<group>"; };
+		A4F6BD7C1795BC360033A0EA /* NSDictionary+NonNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NonNull.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +105,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A47C56C1178F62F5006309AE /* SystemConfiguration.framework in Frameworks */,
+				A479CCDC1794FEFD005F4A97 /* Security.framework in Frameworks */,
+				A479CCDA1794FEED005F4A97 /* QuartzCore.framework in Frameworks */,
+				A479CCD81794FEE5005F4A97 /* libz.1.1.3.dylib in Frameworks */,
+				A479CCD61794FED6005F4A97 /* CFNetwork.framework in Frameworks */,
+				A479CCD41794FECD005F4A97 /* AudioToolbox.framework in Frameworks */,
 				A47C56CA179074E3006309AE /* libz.dylib in Frameworks */,
 				A47C56C8179074D5006309AE /* CoreTelephony.framework in Frameworks */,
-				A47C56C1178F62F5006309AE /* SystemConfiguration.framework in Frameworks */,
 				A47C56C6179074B3006309AE /* NewRelicAgent.framework in Frameworks */,
 				A436C813178F560500B0A008 /* MobileCoreServices.framework in Frameworks */,
 				A436C7F01785C94300B0A008 /* MapKit.framework in Frameworks */,
@@ -154,6 +169,11 @@
 		A45634CB178320F60086821A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A479CCDB1794FEFD005F4A97 /* Security.framework */,
+				A479CCD91794FEED005F4A97 /* QuartzCore.framework */,
+				A479CCD71794FEE5005F4A97 /* libz.1.1.3.dylib */,
+				A479CCD51794FED6005F4A97 /* CFNetwork.framework */,
+				A479CCD31794FECD005F4A97 /* AudioToolbox.framework */,
 				A47C56C9179074E3006309AE /* libz.dylib */,
 				A47C56C7179074D5006309AE /* CoreTelephony.framework */,
 				A47C56C5179074B3006309AE /* NewRelicAgent.framework */,
@@ -177,6 +197,8 @@
 				A45634E4178320F60086821A /* AppDelegate.m */,
 				A45634D9178320F60086821A /* Networking */,
 				A456350017833EBF0086821A /* Controllers */,
+				A4F6BD7B1795BC360033A0EA /* NSDictionary+NonNull.h */,
+				A4F6BD7C1795BC360033A0EA /* NSDictionary+NonNull.m */,
 				A45634EC178320F60086821A /* Models */,
 				A4420DDE17836DBE00D8FFF6 /* Views */,
 			);
@@ -201,8 +223,6 @@
 			children = (
 				A45634DA178320F60086821A /* ZuzuAPIClient.h */,
 				A45634DB178320F60086821A /* ZuzuAPIClient.m */,
-				A45634F0178320F60086821A /* ZuzuIncrementalStore.h */,
-				A45634F1178320F60086821A /* ZuzuIncrementalStore.m */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -221,12 +241,12 @@
 			children = (
 				A45634FD17833EB60086821A /* IndexViewController.h */,
 				A45634FE17833EB60086821A /* IndexViewController.m */,
-				A479CCCC1794B48C005F4A97 /* AddPhotoViewController.h */,
-				A479CCCD1794B48C005F4A97 /* AddPhotoViewController.m */,
-				A479CCCF1794B4A2005F4A97 /* AddPhotoStoryboard.storyboard */,
 				A456354E17835B920086821A /* AddPostViewController.h */,
 				A456354F17835B920086821A /* AddPostViewController.m */,
 				A456355117835BE30086821A /* AddPostStoryboard.storyboard */,
+				A479CCCC1794B48C005F4A97 /* AddPhotoViewController.h */,
+				A479CCCD1794B48C005F4A97 /* AddPhotoViewController.m */,
+				A479CCCF1794B4A2005F4A97 /* AddPhotoStoryboard.storyboard */,
 				A479CCC61790BEBE005F4A97 /* signup/in */,
 			);
 			name = Controllers;
@@ -275,6 +295,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = marko;
+				TargetAttributes = {
+					A45634C8178320F60086821A = {
+						DevelopmentTeam = 5Z92J8JZ48;
+					};
+				};
 			};
 			buildConfigurationList = A45634C4178320F60086821A /* Build configuration list for PBXProject "Zuzu" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -354,12 +379,12 @@
 				A479CCCE1794B48C005F4A97 /* AddPhotoViewController.m in Sources */,
 				A45634E2178320F60086821A /* main.m in Sources */,
 				A45634E5178320F60086821A /* AppDelegate.m in Sources */,
-				A45634F2178320F60086821A /* ZuzuIncrementalStore.m in Sources */,
 				A479CCC41790BEA5005F4A97 /* RegisterViewController.m in Sources */,
 				A45634FF17833EB60086821A /* IndexViewController.m in Sources */,
 				A456354D178359750086821A /* Post.m in Sources */,
 				A456355017835B920086821A /* AddPostViewController.m in Sources */,
 				A436C7FE178E1D8600B0A008 /* LoginViewController.m in Sources */,
+				A4F6BD7D1795BC360033A0EA /* NSDictionary+NonNull.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +471,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Zuzu/Zuzu-Prefix.pch";
 				INFOPLIST_FILE = "Zuzu/Zuzu-Info.plist";
+				OTHER_LDFLAGS = (
+					"${PODS_AFINCREMENTALSTORE_OTHER_LDFLAGS}",
+					"${PODS_AFNETWORKING_OTHER_LDFLAGS}",
+					"${PODS_AFOAUTH_CLIENT_OTHER_LDFLAGS}",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -464,6 +495,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Zuzu/Zuzu-Prefix.pch";
 				INFOPLIST_FILE = "Zuzu/Zuzu-Info.plist";
+				OTHER_LDFLAGS = (
+					"${PODS_AFINCREMENTALSTORE_OTHER_LDFLAGS}",
+					"${PODS_AFNETWORKING_OTHER_LDFLAGS}",
+					"${PODS_AFOAUTH_CLIENT_OTHER_LDFLAGS}",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

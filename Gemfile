@@ -11,6 +11,7 @@ gem 'simple_form'
 gem 'opro'
 gem 'newrelic_rpm'
 gem 'rabl-rails'
+gem 'faker', '1.1.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
