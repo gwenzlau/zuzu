@@ -39,18 +39,18 @@
 }
 
 - (IBAction)register:(id)sender {
-    NSDictionary *params = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:
-                                                                                   self.signature.text,
-                                                                                   self.email.text,
-                                                                                   self.password.text,
-                                                                                   self.confirmPassword.text,
-                                                                                   nil]
-                                                       forKeys:[NSArray arrayWithObjects:
-                                                                @"signature",
-                                                                @"email",
-                                                                @"password",
-                                                                @"password_confirmation",
-                                                                nil]];
-    [[AFHTTPClient sharedClient] post:@"/users.json" params:params delegate:self];
+//    NSDictionary *params = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:
+//                                                                                   self.signature.text,
+//                                                                                   self.email.text,
+//                                                                                   self.password.text,
+//                                                                                   self.confirmPassword.text,
+//                                                                                   nil]
+//                                                       forKeys:[NSArray arrayWithObjects:
+//                                                                @"signature",
+//                                                                @"email",
+//                                                                @"password",
+//                                                                @"password_confirmation",
+//                                                                nil]];
+//    [[AFHTTPClient sharedClient] post:@"/users.json" params:params delegate:self];
 }
 @end

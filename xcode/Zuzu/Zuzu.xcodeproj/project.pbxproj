@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A436C7F01785C94300B0A008 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A436C7EF1785C94200B0A008 /* MapKit.framework */; };
-		A436C7F2178CB13000B0A008 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A436C7F1178CB13000B0A008 /* Default.png */; };
-		A436C7F4178CB1C600B0A008 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A436C7F3178CB1C600B0A008 /* Default@2x.png */; };
-		A436C7F6178CB1E600B0A008 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A436C7F5178CB1E600B0A008 /* Default-568h@2x.png */; };
 		A436C7FE178E1D8600B0A008 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A436C7FC178E1D8500B0A008 /* LoginViewController.m */; };
 		A436C7FF178E1D8600B0A008 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A436C7FD178E1D8500B0A008 /* LoginViewController.xib */; };
 		A436C813178F560500B0A008 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A436C812178F560500B0A008 /* MobileCoreServices.framework */; };
@@ -22,8 +19,8 @@
 		A45634E0178320F60086821A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A45634DE178320F60086821A /* InfoPlist.strings */; };
 		A45634E2178320F60086821A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A45634E1178320F60086821A /* main.m */; };
 		A45634E5178320F60086821A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A45634E4178320F60086821A /* AppDelegate.m */; };
-		A45634E7178320F60086821A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A45634E6178320F60086821A /* Default.png */; };
-		A45634E9178320F60086821A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A45634E8178320F60086821A /* Default@2x.png */; };
+		A45634E7178320F60086821A /* Default-b.png in Resources */ = {isa = PBXBuildFile; fileRef = A45634E6178320F60086821A /* Default-b.png */; };
+		A45634E9178320F60086821A /* Default@2x-b.png in Resources */ = {isa = PBXBuildFile; fileRef = A45634E8178320F60086821A /* Default@2x-b.png */; };
 		A45634EB178320F60086821A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A45634EA178320F60086821A /* Default-568h@2x.png */; };
 		A45634F2178320F60086821A /* ZuzuIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = A45634F1178320F60086821A /* ZuzuIncrementalStore.m */; };
 		A45634F917832A530086821A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45634F817832A530086821A /* CoreLocation.framework */; };
@@ -33,6 +30,10 @@
 		A456355217835BE30086821A /* AddPostStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A456355117835BE30086821A /* AddPostStoryboard.storyboard */; };
 		A479CCC41790BEA5005F4A97 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A479CCC21790BEA5005F4A97 /* RegisterViewController.m */; };
 		A479CCC51790BEA5005F4A97 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A479CCC31790BEA5005F4A97 /* RegisterViewController.xib */; };
+		A479CCC9179482D4005F4A97 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A479CCC8179482D4005F4A97 /* Default.png */; };
+		A479CCCB1794835A005F4A97 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A479CCCA1794835A005F4A97 /* Default@2x.png */; };
+		A479CCCE1794B48C005F4A97 /* AddPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A479CCCD1794B48C005F4A97 /* AddPhotoViewController.m */; };
+		A479CCD01794B4A2005F4A97 /* AddPhotoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A479CCCF1794B4A2005F4A97 /* AddPhotoStoryboard.storyboard */; };
 		A47C56C1178F62F5006309AE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A47C56C0178F62F5006309AE /* SystemConfiguration.framework */; };
 		A47C56C6179074B3006309AE /* NewRelicAgent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A47C56C5179074B3006309AE /* NewRelicAgent.framework */; };
 		A47C56C8179074D5006309AE /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A47C56C7179074D5006309AE /* CoreTelephony.framework */; };
@@ -44,9 +45,6 @@
 		4633A5FCB82A49ABBFF4B73D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9562666BAB0E496E8FE2F1EB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		A436C7EF1785C94200B0A008 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		A436C7F1178CB13000B0A008 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
-		A436C7F3178CB1C600B0A008 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
-		A436C7F5178CB1E600B0A008 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		A436C7FB178E1D8500B0A008 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		A436C7FC178E1D8500B0A008 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		A436C7FD178E1D8500B0A008 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -64,8 +62,8 @@
 		A45634E1178320F60086821A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A45634E3178320F60086821A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A45634E4178320F60086821A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A45634E6178320F60086821A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		A45634E8178320F60086821A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		A45634E6178320F60086821A /* Default-b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-b.png"; sourceTree = "<group>"; };
+		A45634E8178320F60086821A /* Default@2x-b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x-b.png"; sourceTree = "<group>"; };
 		A45634EA178320F60086821A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A45634F0178320F60086821A /* ZuzuIncrementalStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZuzuIncrementalStore.h; path = Classes/ZuzuIncrementalStore.h; sourceTree = "<group>"; };
 		A45634F1178320F60086821A /* ZuzuIncrementalStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZuzuIncrementalStore.m; path = Classes/ZuzuIncrementalStore.m; sourceTree = "<group>"; };
@@ -80,10 +78,13 @@
 		A479CCC11790BEA5005F4A97 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		A479CCC21790BEA5005F4A97 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		A479CCC31790BEA5005F4A97 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		A479CCC71794828F005F4A97 /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
+		A479CCC8179482D4005F4A97 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		A479CCCA1794835A005F4A97 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		A479CCCC1794B48C005F4A97 /* AddPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPhotoViewController.h; sourceTree = "<group>"; };
+		A479CCCD1794B48C005F4A97 /* AddPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPhotoViewController.m; sourceTree = "<group>"; };
+		A479CCCF1794B4A2005F4A97 /* AddPhotoStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddPhotoStoryboard.storyboard; sourceTree = "<group>"; };
 		A47C56C0178F62F5006309AE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		A47C56C2178F6511006309AE /* AddPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddPhotoViewController.h; sourceTree = "<group>"; };
-		A47C56C3178F6511006309AE /* AddPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddPhotoViewController.m; sourceTree = "<group>"; };
-		A47C56C4178F6511006309AE /* AddPhotoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPhotoViewController.xib; sourceTree = "<group>"; };
 		A47C56C5179074B3006309AE /* NewRelicAgent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NewRelicAgent.framework; sourceTree = "<group>"; };
 		A47C56C7179074D5006309AE /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		A47C56C9179074E3006309AE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -114,12 +115,11 @@
 		A436C7F7178CB66100B0A008 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				A45634E6178320F60086821A /* Default.png */,
-				A45634E8178320F60086821A /* Default@2x.png */,
+				A45634E6178320F60086821A /* Default-b.png */,
+				A45634E8178320F60086821A /* Default@2x-b.png */,
+				A479CCC8179482D4005F4A97 /* Default.png */,
 				A45634EA178320F60086821A /* Default-568h@2x.png */,
-				A436C7F5178CB1E600B0A008 /* Default-568h@2x.png */,
-				A436C7F3178CB1C600B0A008 /* Default@2x.png */,
-				A436C7F1178CB13000B0A008 /* Default.png */,
+				A479CCCA1794835A005F4A97 /* Default@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -134,6 +134,7 @@
 		A45634C0178320F60086821A = {
 			isa = PBXGroup;
 			children = (
+				A479CCC71794828F005F4A97 /* Default~iphone.png */,
 				A45634D4178320F60086821A /* Zuzu */,
 				A45634D7178320F60086821A /* Supporting Files */,
 				A45634CB178320F60086821A /* Frameworks */,
@@ -220,12 +221,12 @@
 			children = (
 				A45634FD17833EB60086821A /* IndexViewController.h */,
 				A45634FE17833EB60086821A /* IndexViewController.m */,
+				A479CCCC1794B48C005F4A97 /* AddPhotoViewController.h */,
+				A479CCCD1794B48C005F4A97 /* AddPhotoViewController.m */,
+				A479CCCF1794B4A2005F4A97 /* AddPhotoStoryboard.storyboard */,
 				A456354E17835B920086821A /* AddPostViewController.h */,
 				A456354F17835B920086821A /* AddPostViewController.m */,
 				A456355117835BE30086821A /* AddPostStoryboard.storyboard */,
-				A47C56C2178F6511006309AE /* AddPhotoViewController.h */,
-				A47C56C3178F6511006309AE /* AddPhotoViewController.m */,
-				A47C56C4178F6511006309AE /* AddPhotoViewController.xib */,
 				A479CCC61790BEBE005F4A97 /* signup/in */,
 			);
 			name = Controllers;
@@ -300,13 +301,13 @@
 				A479CCC51790BEA5005F4A97 /* RegisterViewController.xib in Resources */,
 				A45634D6178320F60086821A /* Podfile in Resources */,
 				A45634E0178320F60086821A /* InfoPlist.strings in Resources */,
-				A45634E7178320F60086821A /* Default.png in Resources */,
-				A45634E9178320F60086821A /* Default@2x.png in Resources */,
+				A479CCC9179482D4005F4A97 /* Default.png in Resources */,
+				A45634E7178320F60086821A /* Default-b.png in Resources */,
+				A45634E9178320F60086821A /* Default@2x-b.png in Resources */,
 				A45634EB178320F60086821A /* Default-568h@2x.png in Resources */,
 				A456355217835BE30086821A /* AddPostStoryboard.storyboard in Resources */,
-				A436C7F2178CB13000B0A008 /* Default.png in Resources */,
-				A436C7F4178CB1C600B0A008 /* Default@2x.png in Resources */,
-				A436C7F6178CB1E600B0A008 /* Default-568h@2x.png in Resources */,
+				A479CCCB1794835A005F4A97 /* Default@2x.png in Resources */,
+				A479CCD01794B4A2005F4A97 /* AddPhotoStoryboard.storyboard in Resources */,
 				A436C7FF178E1D8600B0A008 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A45634DC178320F60086821A /* ZuzuAPIClient.m in Sources */,
+				A479CCCE1794B48C005F4A97 /* AddPhotoViewController.m in Sources */,
 				A45634E2178320F60086821A /* main.m in Sources */,
 				A45634E5178320F60086821A /* AppDelegate.m in Sources */,
 				A45634F2178320F60086821A /* ZuzuIncrementalStore.m in Sources */,
@@ -435,6 +437,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9562666BAB0E496E8FE2F1EB /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/Pods\\\"",
@@ -452,6 +455,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9562666BAB0E496E8FE2F1EB /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/Pods\\\"",

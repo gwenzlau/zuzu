@@ -27,8 +27,7 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
     
     self.title = NSLocalizedString(@"Marko", nil);
     self.navigationItem.rightBarButtonItem = [self addPostButton];
-    
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(takePhoto:)];
+    self.navigationItem.leftBarButtonItem = [self addPhotoButton];
     
 //    NSURL *url = [NSURL URLWithString:@"sleepy-mountain-9630.herokuapp.com/posts.json"];
 //    [AFJSONRequestOperation JSONRequestOperationWithRequest:[NSURLRequest requestWithURL:url] success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
@@ -76,6 +75,11 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
     return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose
                                                          target:self
                                                          action:@selector(addPost:)];
+}
+- (UIBarButtonItem *)addPhotoButton {
+    return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera
+                                                         target:self
+                                                         action:@selector(addPhoto:)];
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -137,6 +141,12 @@ static CLLocationDistance const kMapRegionSpanDistance = 5000;
     UIStoryboard *addPostStoryBoard = [UIStoryboard storyboardWithName:@"AddPostStoryboard"
                                                                 bundle:nil];
     id vc = [addPostStoryBoard instantiateInitialViewController];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+- (void)addPhoto:(id)sender {
+    UIStoryboard *addPhotoStoryBoard = [UIStoryboard storyboardWithName:@"AddPhotoStoryboard"
+                                                                bundle:nil];
+    id vc = [addPhotoStoryBoard instantiateInitialViewController];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

@@ -9,6 +9,8 @@
 #import "AddPostViewController.h"
 #import "Post.h"
 #import "ZuzuAPIClient.h"
+#import "AFJSONRequestOperation.h"
+
 
 @interface AddPostViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *postTextField;
@@ -39,52 +41,75 @@ static NSString * NSStringFromCoordinate(CLLocationCoordinate2D coordinate) {
     
 }
 
--(id)initWithDictionary:(NSDictionary *)dictionary {
-    self = [super init];
-    if (!self) {
-        return nil;
-    }
-   
-    self.latitude = [[dictionary valueForKeyPath:@"lat"] doubleValue];
-    self.longitude = [[dictionary valueForKeyPath:@"lng"] doubleValue];
-    
-    return self;
-}
+//-(id)initWithDictionary:(NSDictionary *)dictionary {
+//    self = [super init];
+//    if (!self) {
+//        return nil;
+//    }
+//    self.latitude = [[dictionary valueForKeyPath:@"lat"] doubleValue];
+//    self.longitude = [[dictionary valueForKeyPath:@"lng"] doubleValue];
+//    
+//    return self;
+//}
 
-- (CLLocation *)location {
-    return [[CLLocation alloc] initWithLatitude:self.latitude longitude:self.longitude];
-}
+//- (CLLocation *)location {
+//    return [[CLLocation alloc] initWithLatitude:self.latitude longitude:self.longitude];
+//}
 
 -(UIBarButtonItem *)saveButton {
-    return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(onSave:)];
+    return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(savePostAtLocation:withContent:block:)];
 }
 
-- (void)onSave: (id)sender  {
-    Post *post = [[Post alloc] init];
-    post.content = self.postTextField.text;
-    [self.view endEditing:YES];
-    
-    
-//        NSMutableDictionary *mutableParameters = [NSMutableDictionary dictionary];
-//        [mutableParameters setObject:[NSNumber numberWithDouble:location.coordinate.latitude] forKey:@"lat"];
-//        [mutableParameters setObject:[NSNumber numberWithDouble:location.coordinate.longitude] forKey:@"lng"];
-//       change params back to mutableParams when you figure out above... 
-        NSMutableURLRequest *mutableURLRequest = [[ZuzuAPIClient sharedClient] multipartFormRequestWithMethod:@"POST" path:@"/posts" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        }];
-        AFHTTPRequestOperation *operation = [[ZuzuAPIClient sharedClient] HTTPRequestOperationWithRequest:mutableURLRequest success:^(AFHTTPRequestOperation *operation, id JSON) {
-            Post *post = [[Post alloc] initWithDictionary:[JSON valueForKeyPath:@"post[post]"]];
-            if (post) {
-                [self.navigationController popViewControllerAnimated:YES];
-                NSLog(@"Success!");
-            }
-        }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            if  
-                (nil, error) {
-                    NSLog(@"Error: %@", error);
-                }
-        }];
-        [[ZuzuAPIClient sharedClient] enqueueHTTPRequestOperation:operation];
-    }
+- (void)savePostAtLocation:(CLLocation *)location
+               withContent:(NSString *)content
+                     block:(void (^)(Post *, NSError *))block
+{
+    NSDictionary *parameters = @{ @"post": @{
+                                          @"lat": @(location.coordinate.latitude),
+                                          @"lng": @(location.coordinate.longitude),
+                                          @"content": content
+                                          }
+                                  };
+    NSMutableURLRequest *mutableURLRequest = [[ZuzuAPIClient sharedClient] requestWithMethod:@"POST" path:@"/posts" parameters:parameters];
+    AFHTTPRequestOperation *operation = [[ZuzuAPIClient sharedClient] HTTPRequestOperationWithRequest:mutableURLRequest
+                                                                            success:^(AFHTTPRequestOperation *operation, id JSON) {
+        Post *post = [[Post alloc] initWithDictionary:[JSON valueForKeyPath:@"post"]];
+        if (block) {
+            block(post, nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (block) {
+            block(nil, error);
+        }
+    }];
+}
+
+//- (void)onSave: (id)sender  {
+//    Post *post = [[Post alloc] init];
+//    post.content = self.postTextField.text;
+//    [self.view endEditing:YES];
+//    
+//    
+////        NSMutableDictionary *mutableParameters = [NSMutableDictionary dictionary];
+////        [mutableParameters setObject:[NSNumber numberWithDouble:location.coordinate.latitude] forKey:@"lat"];
+////        [mutableParameters setObject:[NSNumber numberWithDouble:location.coordinate.longitude] forKey:@"lng"];
+////       change params back to mutableParams when you figure out above... 
+//        NSMutableURLRequest *mutableURLRequest = [[ZuzuAPIClient sharedClient] multipartFormRequestWithMethod:@"POST" path:@"/posts" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+//        }];
+//        AFHTTPRequestOperation *operation = [[ZuzuAPIClient sharedClient] HTTPRequestOperationWithRequest:mutableURLRequest success:^(AFHTTPRequestOperation *operation, id JSON) {
+//            Post *post = [[Post alloc] initWithDictionary:[JSON valueForKeyPath:@"post[post]"]];
+//            if (post) {
+//                [self.navigationController popViewControllerAnimated:YES];
+//                NSLog(@"Success!");
+//            }
+//        }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//            if  
+//                (nil, error) {
+//                    NSLog(@"Error: %@", error);
+//                }
+//        }];
+//        [[ZuzuAPIClient sharedClient] enqueueHTTPRequestOperation:operation];
+//    }
 
 
 

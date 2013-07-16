@@ -2,13 +2,17 @@
 //  AddPhotoViewController.m
 //  Zuzu
 //
-//  Created by Grant Wenzlau on 7/11/13.
+//  Created by Grant Wenzlau on 7/15/13.
 //  Copyright (c) 2013 marko. All rights reserved.
 //
 
 #import "AddPhotoViewController.h"
+#import "Post.h"
 
 @interface AddPhotoViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UITextField *postTextField;
+
 
 @end
 
@@ -32,12 +36,24 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = [self saveButton];
+    self.navigationItem.leftBarButtonItem = [self onCancel];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(UIBarButtonItem *)saveButton {
+    return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(savePostAtLocation:withContent:block:)];
+}
+-(UIBarButtonItem *)onCancel {
+    return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismiss:)];
+}
+- (void)dismiss {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Table view data source
@@ -59,10 +75,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
     
@@ -109,21 +122,15 @@
 */
 
 /*
-#pragma mark - Table view delegate
+#pragma mark - Navigation
 
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+// In a story board-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-
+    // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
 }
- 
+
  */
 
 @end

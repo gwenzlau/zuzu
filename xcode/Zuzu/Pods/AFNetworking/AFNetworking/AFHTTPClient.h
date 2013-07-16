@@ -22,6 +22,8 @@
 
 #import <Foundation/Foundation.h>
 #import "AFURLConnectionOperation.h"
+#import <MobileCoreServices/MobileCoreServices.h>
+#import <SystemConfiguration/SystemConfiguration.h>
 
 #import <Availability.h>
 

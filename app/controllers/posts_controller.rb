@@ -18,7 +18,8 @@ else
   end
 
   def create
-    @post = Post.create(params[:post])
+    puts params
+    @post = Post.create(params["post"])
     respond_with(@post)
   end
 end

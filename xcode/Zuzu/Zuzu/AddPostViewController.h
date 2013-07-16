@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "Post.h"
+#import "IndexViewController.h"
 
 @interface AddPostViewController : UITableViewController <UINavigationControllerDelegate, UITextFieldDelegate>
 
