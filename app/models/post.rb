@@ -16,7 +16,7 @@ class Post < ActiveRecord::Base
    #         :numericality => true
             # :signature, presence: true
 
-
+  #belongs_to :user
 
   scope :nearby, lambda { |lat, lng|
     where("lat BETWEEN ? AND ?", lat - COORDINATE_DELTA, lat + COORDINATE_DELTA).
